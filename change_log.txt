@@ -1,0 +1,26 @@
+CLOS change-log
+
+V 0.1 Beta (First Version):
+	added shutdown functionality (with optional timer)
+	added crud operations ADD, SUBTRACT, MULTIPLY, DIVIDE, POWER, and ROOT
+	added HELP command
+	added ABOUT command
+
+V 0.2 Beta:
+	added VAR command
+	added PRINT command
+	added RESTART command
+	added WHOAMI command
+
+V 0.3 Beta:
+	bug fixes
+	added FILE command
+	added READ command
+
+V 0.4 Beta:
+	bug fixes
+	added VERSION command
+	added MKDIR command
+	added DELETE command
+	added RMDIR command
+	added LS command
