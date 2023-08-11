@@ -11,5 +11,6 @@
 
 <p>If there are any bugs you find or feature requests you find, you can kindly email me at smaran@codestraightwithsmaran.org (NO SPAM).</p>
 
+<h3>This program is protected under the GNU GPL license, and people are allowed to use and distribute the source code, with proper credit to the original autor (Smaran). No commercialization nor privitization of source code is allowed.</h3>
 </body>
 </html>
