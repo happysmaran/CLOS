@@ -70,40 +70,32 @@ int fact(int a) { // helper founction for combination, permutation, and
 }
 
 int main() { // start of main OS code
-  string name = "";
   string version = "0.10";
   string command = "";
   double defaultNumVar = 0;
   vector<string> folders;
   double piVal = 3.141592653579;
 
-  cout << "Enter name: ";
-  cin >> name;
-
-  string folderHomeTemp = "home/" + name;
-  const char *folderHome = folderHomeTemp.c_str();
-
-  mkdir(folderHome, 0777);
+  mkdir("home/", 0777);
 
   cout << '\n';
-  cout << R"(          _             _             _            _        
-        /\ \           _\ \          /\ \         / /\      
-       /  \ \         /\__ \        /  \ \       / /  \     
-      / /\ \ \       / /_ \_\      / /\ \ \     / / /\ \__  
-     / / /\ \ \     / / /\/_/     / / /\ \ \   / / /\ \___\ 
-    / / /  \ \_\   / / /         / / /  \ \_\  \ \ \ \/___/ 
-   / / /    \/_/  / / /         / / /   / / /   \ \ \       
-  / / /          / / / ____    / / /   / / /_    \ \ \      
- / / /________  / /_/_/ ___/\ / / /___/ / //_/\__/ / /      
-/ / /_________\/_______/\__\// / /____\/ / \ \/___/ /       
-\/____________/\_______\/    \/_________/   \_____\/        
+  cout << R"(          _             _             _            _
+        /\ \           _\ \          /\ \         / /\
+       /  \ \         /\__ \        /  \ \       / /  \
+      / /\ \ \       / /_ \_\      / /\ \ \     / / /\ \__
+     / / /\ \ \     / / /\/_/     / / /\ \ \   / / /\ \___\
+    / / /  \ \_\   / / /         / / /  \ \_\  \ \ \ \/___/
+   / / /    \/_/  / / /         / / /   / / /   \ \ \
+  / / /          / / / ____    / / /   / / /_    \ \ \
+ / / /________  / /_/_/ ___/\ / / /___/ / //_/\__/ / /
+/ / /_________\/_______/\__\// / /____\/ / \ \/___/ /
+\/____________/\_______\/    \/_________/   \_____\/
                                                             )"
        << '\n';
-  cout << "Welcome to the Command Line Operating System Beta, " << name << "."
-       << '\n';
-  cout << "Version: " << version << ", Name: " + name + "." << '\n';
+  cout << "Welcome to the Command Line Operating System." << '\n';
+  cout << "Version: " << version << "." << '\n';
   while (true) {
-    cout << "system@" + name + "> ";
+    cout << "user@clos> ";
     cin >> command;
 
     if (command == "help" || command == "h") { // start of HELP
@@ -134,7 +126,6 @@ int main() { // start of main OS code
       cout << "print - Prints a variable made using var command." << '\n';
       cout << "restart - Restarts CLOS. Optional delay in seconds available."
            << '\n';
-      cout << "whoami - Shows the entered name." << '\n';
       cout << "file - Creates a new file or rewrites exsisting one. Path can "
               "be specified and is entierly optional."
            << '\n';
@@ -151,11 +142,14 @@ int main() { // start of main OS code
               "empty, it fails to do so."
            << '\n';
       cout << "ls - Lists the contents of a given folder." << '\n';
+      cout << "iround - Rounds by concatenation (removing decimal part)." << '\n';
       cout << "solve - Equation Solver v0.3. Solves linear and quadratic "
               "functions with support of non real coefficients and answers."
            << '\n';
       cout << "doublesolve - Double Equation Solver v0.1. Solves a system of "
               "linear equations given the equations and bounds."
+           << '\n';
+      cout << "linegraph - Graphs a Linear Equation given the standard form."
            << '\n';
       cout << "funcstat - FUNCSTAT feature. Given the equation, upper, and "
               "lower bound, it outputs the list of (x,y) coordinate pairs of "
@@ -187,6 +181,10 @@ int main() { // start of main OS code
       cout << "summation or sum - Computes the summation value of a given "
               "function (linear or quadratic) or a constant."
            << '\n';
+      cout << "deriv or derivative - Definite Derivative Calculator" << '\n';
+      cout << "integral - Definite Integral Calculator" << '\n';
+      cout << "indefder or indefderiv - Indefinite Derivative Calculator" << '\n';
+      cout << "indefintegral - Indefinite Integral Calculator" << '\n';
       cout << "lcm - Finds the LCM of two given numbers." << '\n';
       cout << "gcd - Finds the GCD of two given numbers." << '\n';
       cout << "time or date - Displays the time and date of the system in GMT."
@@ -205,14 +203,14 @@ int main() { // start of main OS code
       system("clear");
       return 0;
     } // end of EXIT
- 
+
     else if (command == "add") { // start of ADD
       bool isContinuing = false;
       while (true) {
         double b = 0;
         if (!isContinuing) {
           cout << "\033[32m"
-               << "Two numbers: "
+               << "Two numbers (enter as 'a b' without quotes): "
                << "\033[37m";
           string temp1 = "", temp2 = "";
           cin >> temp1 >> temp2;
@@ -256,7 +254,7 @@ int main() { // start of main OS code
           cout << defaultNumVar + b << '\n';
         } else if (isContinuing) {
           cout << "\033[32m"
-               << "Additional number: "
+               << "Additional number (enter as 'a' without quotes): "
                << "\033[37m";
           string temp1 = "";
           cin >> temp1;
@@ -297,7 +295,7 @@ int main() { // start of main OS code
         double b = 0;
         if (!isContinuing) {
           cout << "\033[32m"
-               << "Two numbers: "
+               << "Two numbers (enter as 'a b' without quotes): "
                << "\033[37m";
           string temp1 = "", temp2 = "";
           cin >> temp1 >> temp2;
@@ -341,7 +339,7 @@ int main() { // start of main OS code
           cout << defaultNumVar - b << '\n';
         } else if (isContinuing) {
           cout << "\033[32m"
-               << "Additional number: "
+               << "Additional number (enter as 'a' without quotes): "
                << "\033[37m";
           string temp1 = "";
           cin >> temp1;
@@ -382,7 +380,7 @@ int main() { // start of main OS code
         double b = 0;
         if (!isContinuing) {
           cout << "\033[32m"
-               << "Two numbers: "
+               << "Two numbers (enter as 'a b' without quotes): "
                << "\033[37m";
           string temp1 = "", temp2 = "";
           cin >> temp1 >> temp2;
@@ -426,7 +424,7 @@ int main() { // start of main OS code
           cout << defaultNumVar * b << '\n';
         } else if (isContinuing) {
           cout << "\033[32m"
-               << "Additional number: "
+               << "Additional number (enter as 'a' without quotes): "
                << "\033[37m";
           string temp1 = "";
           cin >> temp1;
@@ -467,7 +465,7 @@ int main() { // start of main OS code
         double b = 1;
         if (!isContinuing) {
           cout << "\033[32m"
-               << "Two numbers: "
+               << "Two numbers (enter as 'a b' without quotes): "
                << "\033[37m";
           string temp1 = "", temp2 = "";
           cin >> temp1 >> temp2;
@@ -517,7 +515,7 @@ int main() { // start of main OS code
           cout << defaultNumVar / b << '\n';
         } else if (isContinuing) {
           cout << "\033[32m"
-               << "Additional number: "
+               << "Additional number (enter as 'a' without quotes): "
                << "\033[37m";
           string temp1 = "";
           cin >> temp1;
@@ -566,7 +564,7 @@ int main() { // start of main OS code
     else if (command == "power" || command == "pwr") { // start of POWER
       double b = 0;
       cout << "\033[32,"
-           << "Two numbers: "
+           << "Two numbers (enter as 'a b' without quotes, for a to power of b): "
            << "\0333[37m";
       string temp1 = "", temp2 = "";
       cin >> temp1 >> temp2;
@@ -615,7 +613,7 @@ int main() { // start of main OS code
     else if (command == "root") { // start of ROOT
       double b = 0;
       cout << "\033[32m"
-           << "Two numbers: "
+           << "Two numbers (enter as 'a b' without quotes, for a root of b): "
            << "\033[37m";
       string temp1 = "", temp2 = "";
       cin >> temp1 >> temp2;
@@ -696,6 +694,10 @@ int main() { // start of main OS code
 
       cout << "\033[34m" << round(b) << "\033[37m" << '\n';
     } // end of ROUND
+      
+    else if (command == "iround") { // start of IROUND
+        
+    } // end of IROUND
 
     else if (command == "clear" || command == "cls") { // start of CLEAR
       cout.flush();
@@ -703,21 +705,21 @@ int main() { // start of main OS code
     } // end of CLEAR
 
     else if (command == "about") { // start of ABOUT
-      cout << R"(          _             _             _            _        
-        /\ \           _\ \          /\ \         / /\      
-       /  \ \         /\__ \        /  \ \       / /  \     
-      / /\ \ \       / /_ \_\      / /\ \ \     / / /\ \__  
-     / / /\ \ \     / / /\/_/     / / /\ \ \   / / /\ \___\ 
-    / / /  \ \_\   / / /         / / /  \ \_\  \ \ \ \/___/ 
-   / / /    \/_/  / / /         / / /   / / /   \ \ \       
-  / / /          / / / ____    / / /   / / /_    \ \ \      
- / / /________  / /_/_/ ___/\ / / /___/ / //_/\__/ / /      
-/ / /_________\/_______/\__\// / /____\/ / \ \/___/ /       
-\/____________/\_______\/    \/_________/   \_____\/        
+      cout << R"(          _             _             _            _
+        /\ \           _\ \          /\ \         / /\
+       /  \ \         /\__ \        /  \ \       / /  \
+      / /\ \ \       / /_ \_\      / /\ \ \     / / /\ \__
+     / / /\ \ \     / / /\/_/     / / /\ \ \   / / /\ \___\
+    / / /  \ \_\   / / /         / / /  \ \_\  \ \ \ \/___/
+   / / /    \/_/  / / /         / / /   / / /   \ \ \
+  / / /          / / / ____    / / /   / / /_    \ \ \
+ / / /________  / /_/_/ ___/\ / / /___/ / //_/\__/ / /
+/ / /_________\/_______/\__\// / /____\/ / \ \/___/ /
+\/____________/\_______\/    \/_________/   \_____\/
                                                             )"
            << '\n';
       cout << "CLOS System - Command Line Operating System" << '\n';
-      cout << "Version: " << version << ", Name: " + name + "." << '\n';
+      cout << "Version: " << version << "." << '\n';
     } // end of ABOUT
 
     else if (command == "var") { // start of VAR
@@ -768,30 +770,23 @@ int main() { // start of main OS code
       cout << "\033[34m"
            << "restarted"
            << "\033[37m" << '\n';
-      cout << "Enter name:";
-      cin >> name;
       cout << '\n';
-      cout << R"(          _             _             _            _        
-        /\ \           _\ \          /\ \         / /\      
-       /  \ \         /\__ \        /  \ \       / /  \     
-      / /\ \ \       / /_ \_\      / /\ \ \     / / /\ \__  
-     / / /\ \ \     / / /\/_/     / / /\ \ \   / / /\ \___\ 
-    / / /  \ \_\   / / /         / / /  \ \_\  \ \ \ \/___/ 
-   / / /    \/_/  / / /         / / /   / / /   \ \ \       
-  / / /          / / / ____    / / /   / / /_    \ \ \      
- / / /________  / /_/_/ ___/\ / / /___/ / //_/\__/ / /      
-/ / /_________\/_______/\__\// / /____\/ / \ \/___/ /       
-\/____________/\_______\/    \/_________/   \_____\/        
+      cout << R"(          _             _             _            _
+        /\ \           _\ \          /\ \         / /\
+       /  \ \         /\__ \        /  \ \       / /  \
+      / /\ \ \       / /_ \_\      / /\ \ \     / / /\ \__
+     / / /\ \ \     / / /\/_/     / / /\ \ \   / / /\ \___\
+    / / /  \ \_\   / / /         / / /  \ \_\  \ \ \ \/___/
+   / / /    \/_/  / / /         / / /   / / /   \ \ \
+  / / /          / / / ____    / / /   / / /_    \ \ \
+ / / /________  / /_/_/ ___/\ / / /___/ / //_/\__/ / /
+/ / /_________\/_______/\__\// / /____\/ / \ \/___/ /
+\/____________/\_______\/    \/_________/   \_____\/
                                                             )"
            << '\n';
-      cout << "Welcome to the Command Line Operating System Beta, " << name
-           << "." << '\n';
-      cout << "Version: " << version << ", Name: " + name + "." << '\n';
+      cout << "Welcome to the Command Line Operating System." << '\n';
+      cout << "Version: " << version << "." << '\n';
     } // end of RESTART
-
-    else if (command == "whoami") { // start of WHOAMI
-      cout << name << '\n';
-    } // end of WHOAMI
 
     else if (command == "file") { // start of FILE
       cout << "\033[32m"
@@ -799,11 +794,11 @@ int main() { // start of main OS code
            << "\033[37m";
       string fileName = "";
       cin >> fileName;
-      fileName = "home/" + name + "/" + fileName;
+      fileName = "home/" + fileName;
       ofstream tempFile(fileName);
       cout.flush();
       system("clear");
-      cout << "Editing " + fileName + " under username " + name << '\n';
+      cout << "Editing " + fileName << '\n';
       cout << "To end type q and hit Enter on new line."
            << "\033[32m" << '\n';
       while (true) {
@@ -826,7 +821,7 @@ int main() { // start of main OS code
            << "\033[37m";
       string fileName = "";
       cin >> fileName;
-      fileName = "home/" + name + "/" + fileName;
+      fileName = "home/" + fileName;
       string output = "";
       ifstream tempFile(fileName);
       while (getline(tempFile, output)) {
@@ -841,7 +836,7 @@ int main() { // start of main OS code
 
       string temp = "";
       cin >> temp;
-      temp = "home/" + name + "/" + temp;
+      temp = "home/" + temp;
       char *folder = const_cast<char *>(temp.c_str());
       int check = 0;
       check = mkdir(folder, 0777);
@@ -862,7 +857,7 @@ int main() { // start of main OS code
            << "\033[37m";
       string temp = "";
       cin >> temp;
-      temp = "home/" + name + "/" + temp;
+      temp = "home/" + temp;
       char *filename = const_cast<char *>(temp.c_str());
       int check = 0;
       check = remove(filename);
@@ -884,7 +879,7 @@ int main() { // start of main OS code
            << "\033[37m";
       string temp = "";
       cin >> temp;
-      temp = "home/" + name + "/" + temp;
+      temp = "home/" + temp;
       char *folder = const_cast<char *>(temp.c_str());
       int check = 0;
       check = rmdir(folder);
@@ -908,7 +903,7 @@ int main() { // start of main OS code
 
       string temp = "";
       cin >> temp;
-      temp = "home/" + name + "/" + temp;
+      temp = "home/" + temp;
       char *folder = const_cast<char *>(temp.c_str());
       list_dir(folder);
     } // end of LS
@@ -976,7 +971,7 @@ int main() { // start of main OS code
                << "\033[37m" << '\n';
         }
       } else if (type == "quadratic") {
-        complex<double> a = (0, 0), b = (0, 0), c = (0, 0);
+          complex<double> a = (static_cast<void>(0), 0), b = (static_cast<void>(0), 0), c = (static_cast<void>(0), 0);
         cout << "Function type chosen: Quadratic (y=ax^2 + bx + c)" << '\n';
         cout << "\033[32m"
              << "Enter the coefficient for x squared term (a. default a=1): "
@@ -1303,7 +1298,6 @@ int main() { // start of main OS code
       cout << "\033[32m"
            << "Are you using natural logarithm(Y/n)? "
            << "\033[37m";
-      bool isNatural = false;
       string temp = "";
       cin >> temp;
       if (temp == "Y" || temp == "y") {
@@ -1695,6 +1689,580 @@ int main() { // start of main OS code
       }
     } // end of SUMMATION
 
+    else if (command == "linegraph") { // start of LINEGRAPH
+      vector<vector<char>> graph = {
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '|',
+           '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+          {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '|',
+           '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+      };
+      int m = 1, b = 0;
+      cout << "Line Grapher v0.1" << '\n';
+      cout << "This tool can be used to graph linear equations." << '\n';
+      cout << "\033[32m"
+           << "Enter the coefficient for x term (m. default m=1): "
+           << "\033[37m";
+      cin >> m;
+      if (m == 0) {
+        m = 1;
+        cout << "\033[31m"
+             << "Cannot use zero for m value. Using one. Continue (Y/N)?"
+             << "\033[37m";
+        string continu = "";
+        cin >> continu;
+        if (continu == "Y" || continu == "y") {
+          cout << "\033[32m"
+               << "Enter the value for constant (b): "
+               << "\033[37m";
+          cin >> b;
+
+          for (int w = 0; w <= 20; w++) {
+            int i = w - 10;
+            if (i < 0) {
+              int tempgraph = i + 10;
+              int ytemp = m * i + b;
+              if (ytemp < -10 || ytemp > 10) {
+                continue;
+              } else {
+                if (ytemp < 0) {
+                  //int ytempgraph = -1 * (ytemp - 10);
+                  graph[ytemp][tempgraph] = 'X';
+                }
+                if (ytemp == 0) {
+                  graph[10][tempgraph] = 'X';
+                }
+                if (ytemp > 0) {
+                  int ytempgraph = 10 - ytemp;
+                  graph[ytempgraph][tempgraph] = 'X';
+                }
+              }
+            } else if (i == 0) {
+              int ytemp = m * 0 + b;
+              if (ytemp < -10 || ytemp > 10) {
+                continue;
+              } else {
+                if (ytemp < 0) {
+                  int ytempgraph = -1 * (ytemp - 10);
+                  graph[ytempgraph][10] = 'X';
+                }
+                if (ytemp == 0) {
+                  graph[10][10] = 'X';
+                }
+                if (ytemp > 0) {
+                  int ytempgraph = 10 - ytemp;
+                  graph[ytempgraph][10] = 'X';
+                }
+              }
+            } else if (i > 0) {
+              int tempgraph = 10 + i;
+              int ytemp = m * i + b;
+              if (ytemp < -10 || ytemp > 10) {
+                continue;
+              } else {
+                if (ytemp < 0) {
+                  int ytempgraph = -1 * (ytemp - 10);
+                  graph[ytempgraph][tempgraph] = 'X';
+                }
+                if (ytemp == 0) {
+                  graph[10][tempgraph] = 'X';
+                }
+                if (ytemp > 0) {
+                  int ytempgraph = 10 - ytemp;
+                  graph[ytempgraph][tempgraph] = 'X';
+                }
+              }
+            }
+          }
+
+          for (int i = 0; i <= 20; i++) {
+            int indice = -1 * (i - 10);
+            if (indice < 0 && indice != -10) {
+              cout << " " << indice << " ";
+            } else if (indice == 10) {
+              cout << "  " << indice << " ";
+            }
+            for (int j = 0; j <= 20; j++) {
+              if (graph[i][j] == 'X') {
+                cout << "\033[32m" << graph[i][j] << "\033[37m"
+                     << " ";
+              } else {
+                cout << graph[i][j] << " ";
+              }
+            }
+            cout << '\n';
+          }
+        } else {
+          cout << '\n';
+          system("clear");
+        }
+      } else {
+        int b = 0;
+        cout << "\033[32m"
+             << "Enter the value for constant (b): "
+             << "\033[37m";
+        cin >> b;
+
+        for (int w = 0; w <= 20; w++) {
+          int i = w - 10;
+          if (i < 0) {
+            int tempgraph = i + 10;
+            int ytemp = m * i + b;
+            if (ytemp < -10 || ytemp > 10) {
+              continue;
+            } else {
+              if (ytemp < 0) {
+                int ytempgraph = -1 * (ytemp - 10);
+                graph[ytempgraph][tempgraph] = 'X';
+              }
+              if (ytemp == 0) {
+                graph[10][tempgraph] = 'X';
+              }
+              if (ytemp > 0) {
+                int ytempgraph = 10 - ytemp;
+                graph[ytempgraph][tempgraph] = 'X';
+              }
+            }
+          } else if (i == 0) {
+            int ytemp = m * 0 + b;
+            if (ytemp < -10 || ytemp > 10) {
+              continue;
+            } else {
+              if (ytemp < 0) {
+                int ytempgraph = -1 * (ytemp - 10);
+                graph[ytempgraph][10] = 'X';
+              }
+              if (ytemp == 0) {
+                graph[10][10] = 'X';
+              }
+              if (ytemp > 0) {
+                int ytempgraph = 10 - ytemp;
+                graph[ytempgraph][10] = 'X';
+              }
+            }
+          } else if (i > 0) {
+            int tempgraph = 10 + i;
+            int ytemp = m * i + b;
+            if (ytemp < -10 || ytemp > 10) {
+              continue;
+            } else {
+              if (ytemp < 0) {
+                //int ytempgraph = -1 * (ytemp - 10);
+                graph[ytemp][tempgraph] = 'X';
+              }
+              if (ytemp == 0) {
+                graph[10][tempgraph] = 'X';
+              }
+              if (ytemp > 0) {
+                int ytempgraph = 10 - ytemp;
+                graph[ytempgraph][tempgraph] = 'X';
+              }
+            }
+          }
+        }
+        for (int i = 0; i <= 20; i++) {
+          int indice = -1 * (i - 10);
+          if (indice < 0 && indice != -10) {
+            cout << " " << indice << " ";
+          } else if (indice == 10) {
+            cout << " " << 10 << " ";
+          } else if (indice == -10) {
+            cout << -10 << " ";
+          } else {
+            cout << "  " << indice << " ";
+          }
+          for (int j = 0; j <= 20; j++) {
+            if (graph[i][j] == 'X') {
+              cout << "\033[32m" << graph[i][j] << "\033[37m"
+                   << " ";
+            } else {
+              cout << graph[i][j] << " ";
+            }
+          }
+          cout << '\n';
+        }
+      }
+    } // end of LINEGRAPH
+
+    else if (command == "circle") { // start of CIRCLE
+      double h = 0, k = 0, r = 1;
+      cout << "Circle Informant Utility" << '\n';
+      cout << "This tool can be used to get information of circles in standard "
+              "form. Decimals supported"
+           << '\n';
+      cout << "\033[32m"
+           << "Enter the coefficient for x constant term (h in (x-h)^2): "
+           << "\033[37m";
+      cin >> h;
+      cout << "\033[32m"
+           << "Enter the coefficient for y constant term (k in (y-k)^2): "
+           << "\033[37m";
+      cin >> k;
+
+      int ech = -1.0 * h, kay = -1.0 * k;
+      if (ech == -0.1) {
+        ech = 0;
+      }
+      if (kay == -0.1) {
+        kay = 0;
+      }
+
+      cout << "\033[32m"
+           << "Enter r value (r in (x-h)^2 + (y-k)^2 = r^2): "
+           << "\033[37m";
+      cin >> r;
+      if (r == 0) {
+        cout << "\033[31m"
+             << "Cannot use zero for r. Using one. Continue (Y/N)?"
+             << "\033[37m";
+        string continu = "";
+        cin >> continu;
+        if (continu == "Y" || continu == "y") {
+          r = 1;
+          cout << "\033[34m"
+               << "Radius of Circle: " << r << "."
+               << "\033[37m"
+               << "\n";
+          cout << "\033[34m"
+               << "Origin of Circle: (" << ech << ", " << kay << ")."
+               << "\033[37m"
+               << "\n";
+          cout << "\033[34m"
+               << "Top Corner: (" << ech << ", " << kay + r << ")."
+               << "\033[37m"
+               << "\n";
+          cout << "\033[34m"
+               << "Bottom Corner: (" << ech << ", " << kay - r << ")."
+               << "\033[37m"
+               << "\n";
+          cout << "\033[34m"
+               << "Left Corner: (" << ech - r << ", " << kay << ")."
+               << "\033[37m"
+               << "\n";
+          cout << "\033[34m"
+               << "Right Corner: (" << ech + r << ", " << kay << ")."
+               << "\033[37m"
+               << "\n";
+        } else {
+          cout << '\n';
+          system("clear");
+        }
+      } else {
+        cout << "\033[34m"
+             << "Radius of Circle: " << r << "."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Origin of Circle: (" << ech << ", " << kay << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Top Corner: (" << ech << ", " << kay + r << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Bottom Corner: (" << ech << ", " << kay - r << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Left Corner: (" << ech - r << ", " << kay << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Right Corner: (" << ech + r << ", " << kay << ")."
+             << "\033[37m"
+             << "\n";
+      }
+    } // end of CIRCLE
+      
+    else if (command=="integral" || command=="integrand"){
+        string functionType;
+        cout << "\033[32m" << "Linear or Quadratic? " << "\033[37m";
+        cin >> functionType;
+        
+        if(functionType=="Linear"){
+            double m, b, x;
+            cout << "Function type chosen: Linear (mx+b)\n";
+            cout << "\033[32m" << "Enter value for x coefficient: " << "\033[37m";
+            cin >> m;
+            cout << "\033[32m" << "Enter value for constant (b): " << "\033[37m";
+            cin >> b;
+            cout << "\033[32m" << "Enter x coordinate: " << "\033[37m";
+            cin >> x;
+            cout << "\033[34m" << "Result: " << (m/2)*x*x + b*x << "\033[37m" << "\n";
+        } else if (functionType == "Quadratic"){
+            double a, b, c, x;
+            cout << "Function type chosen: Quadratic (mx+b)\n";
+            cout << "\033[32m" << "Enter value for x^2 coefficient: " << "\033[37m";
+            cin >> a;
+            cout << "\033[32m" << "Enter value for x coefficient: " << "\033[37m";
+            cin >> b;
+            cout << "\033[32m" << "Enter value for constant (c): " << "\033[37m";
+            cin >> c;
+            cout << "\033[32m" << "Enter x coordinate: " << "\033[37m";
+            cin >> x;
+            cout << "\033[34m" << "Result: " << (a/3)*x*x*x + b*x*x + c*x << "\033[37m" << "\n";
+        }
+    }
+      
+    else if (command=="deriv" || command=="derivative"){ // start of DERIV
+        string functionType;
+        cout << "\033[32m" << "Linear or Quadratic? " << "\033[37m";
+        cin >> functionType;
+
+        if (functionType == "Linear") {
+            double m, b, x;
+            cout << "Function type chosen: Linear (mx+b)\n";
+            cout << "\033[32m" << "Enter value for x coefficient: " << "\033[37m";
+            cin >> m;
+            cout << "\033[32m" << "Enter value for constant (b): " << "\033[37m";
+            cin >> b;
+            cout << "\033[32m" << "Enter x coordinate: " << "\033[37m";
+            cin >> x;
+            cout << "\033[34m" << "Result: " << m << "\033[37m" << "\n";
+        } else if (functionType == "Quadratic") {
+            double a, b, c, x;
+            cout << "Function type chosen: Quadratic (ax^2+bx+c)\n";
+            cout << "\033[32m" << "Enter value for x^2 coefficient (a): " << "\033[37m";
+            cin >> a;
+            cout << "\033[32m" << "Enter value for x coefficient (b): " << "\033[37m";
+            cin >> b;
+            cout << "\033[32m" << "Enter value for constant (c): " << "\033[37m";
+            cin >> c;
+            cout << "\033[32m" << "Enter x coordinate: " << "\033[37m";
+            cin >> x;
+            cout << "\033[34m" << "Result: " << 2*a*x+b << "\033[37m" << "\n";
+        } else {
+            cout << "\033[31m" << "Invalid function type entered. Try again." << "\033[37m" << "\n";
+        }
+    } // end of DERIV
+      
+    else if (command=="indefder" || command=="indefinitederiv") { // start of INDEFDER
+        cout << "Indefinite Derivative Calculator for Standard Polynomials" << '\n';
+        cout << "\033[31m" << "Due to limitations of the input system in C++, it is required to mention the number of polynomials beforehand." << "\033[37m" << '\n';
+        cout << "Furthermore, all polynomials must be in the form of Ax^b, were A and b are constants." << '\n';
+        
+        int n=0;
+        cout << '\n' << "\033[32m" << "Enter the number of polynomials: " << "\033[37m";
+        cin >> n;
+        
+        vector<int> coeffs={};
+        vector<int> pwrs={};
+        
+        for(int i=0; i<n; i++){
+            int a=0, b=0;
+            cout << "\033[32m" << "Enter coefficient for term " << i+1 << ": " << "\033[37m";
+            cin >> a;
+            cout << "\033[32m" << "Enter power for term " << i+1 << ": " << "\033[37m";
+            cin >> b;
+            
+            coeffs.push_back(a);
+            pwrs.push_back(b);
+        }
+        
+        cout << "\n" << "\033[34m" << "Result: " << "\033[37m";
+        for(int i=0; i<n-1; i++){
+            cout << coeffs[i]*pwrs[i] << "x^" << pwrs[i]-1;
+            if(i==n-2){
+                cout << "\n";
+            }else{
+                cout << " + ";
+            }
+        }
+        
+    } // end of INDEFDER
+      
+    else if (command == "indefintegral" || command == "indefintegral"){
+        cout << "Indefinite Integral Calculator for Standard Polynomials" << '\n';
+        cout << "\033[31m" << "Due to limitations of the input system in C++, it is required to mention the number of polynomials beforehand." << "\033[37m" << '\n';
+        cout << "Furthermore, all polynomials must be in the form of Ax^b, were A and b are constants." << '\n';
+        
+        int n=0;
+        cout << '\n' << "\033[32m" << "Enter the number of polynomials: " << "\033[37m";
+        cin >> n;
+        
+        vector<int> coeffs={};
+        vector<int> pwrs={};
+        
+        for(int i=0; i<n; i++){
+            int a=0, b=0;
+            cout << "\033[32m" << "Enter coefficient for term " << i+1 << ": " << "\033[37m";
+            cin >> a;
+            cout << "\033[32m" << "Enter power for term " << i+1 << ": " << "\033[37m";
+            cin >> b;
+            
+            coeffs.push_back(a);
+            pwrs.push_back(b);
+        }
+        
+        cout << "\n" << "\033[34m" << "Result: " << "\033[37m";
+        for(int i=0; i<n+1; i++){
+            cout << coeffs[i]/(pwrs[i]+1) << "x^" << pwrs[i]+1;
+            if(i==n){
+                cout << "\n";
+            }else{
+                cout << " + ";
+            }
+        }
+    }
+
+    else if (command == "ellipse") { // start of ELLIPSE
+      double h = 0, k = 0, a = 0, b = 0;
+      cout << "Ellipse Informant Utility" << '\n';
+      cout
+          << "This tool can be used to get information of ellipses in standard "
+             "form. Decimals supported"
+          << '\n';
+      cout << "\033[32m"
+           << "Enter the coefficient for x constant term (h in (x-h)^2/a^2): "
+           << "\033[37m";
+      cin >> h;
+      cout << "\033[32m"
+           << "Enter the coefficient for y constant term (k in (y-k)^2/b^2): "
+           << "\033[37m";
+      cin >> k;
+
+      int ech = 1.0 * h, kay = 1.0 * k;
+      /*if (ech == -0.0) {
+        ech = 0;
+      }
+      if (kay == -0.0) {
+        kay = 0;
+      }*/
+
+      cout << "\033[32m"
+           << "Enter the focal factor for x (a in (x-h)^2/a^2 + (y-k)^2/b^2 = "
+              "r^2): "
+           << "\033[37m";
+      cin >> a;
+      cout << "\033[32m"
+           << "Enter the focal factor for y (b in (x-h)^2/a^2 + (y-k)^2/b^2 = "
+              "r^2): "
+           << "\033[37m";
+      cin >> b;
+
+      double c = 0;
+      if (a >= b) {
+        c = sqrt((a * a) - (b * b));
+      } else {
+        c = sqrt((b * b) - (a * a));
+      }
+
+      cout << "\033[34m"
+           << "Origin of Ellipse: (" << ech << ", " << kay << ")."
+           << "\033[37m"
+           << "\n";
+      if (b > a) {
+        cout << "\033[34m"
+             << "Foci 1 of Ellipse: (" << ech << ", " << kay + c << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Foci 2 of Ellipse: (" << ech << ", " << kay - c << ")."
+             << "\033[37m"
+             << "\n";
+      } else if (a > b) {
+        cout << "\033[34m"
+             << "Foci 1 of Ellipse: (" << ech + c << ", " << kay << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Foci 2 of Ellipse: (" << ech - c << ", " << kay << ")."
+             << "\033[37m"
+             << "\n";
+      } else {
+        cout << "\033[34m"
+             << "This tool calculates information for ellipses. The given "
+                "information is relevant to a circle. Please use the Circle "
+                "Informant Utility instead with the command 'circle'."
+             << "\033[37m"
+             << "\n";
+        break;
+      }
+
+      if (b > a) {
+        cout << "\033[34m"
+             << "Top Corner: (" << ech << ", " << kay + b << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Bottom Corner: (" << ech << ", " << kay - b << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Left Corner: (" << ech - a << ", " << kay << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Right Corner: (" << ech + a << ", " << kay << ")."
+             << "\033[37m"
+             << "\n";
+      } else if (a > b) {
+        cout << "\033[34m"
+             << "Top Corner: (" << ech << ", " << kay + a << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Bottom Corner: (" << ech << ", " << kay - a << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Left Corner: (" << ech - b << ", " << kay << ")."
+             << "\033[37m"
+             << "\n";
+        cout << "\033[34m"
+             << "Right Corner: (" << ech + b << ", " << kay << ")."
+             << "\033[37m"
+             << "\n";
+      } else {
+        cout << "\033[34m"
+             << "This tool calculates information for ellipses. The given "
+                "information is relevant to a circle. Please use the Circle "
+                "Informant Utility instead with the command 'circle'."
+             << "\033[37m"
+             << "\n";
+        break;
+      }
+
+    } // end of ELLIPSE
+
     else if (command == "doublesolve") { // start of DOUBLESOLVE
       system("clear");
       cout << "Double equation Solver v0.1" << '\n';
@@ -1984,7 +2552,7 @@ int main() { // start of main OS code
     } // end of TIME/DATE
 
     else if (command == "version" || command == "ver") { // start of VERSION
-      cout << "Version: " << version << " (Beta Access)" << '\n';
+      cout << "Version: " << version << '\n';
     } // end of VERSION
 
     else if (command == "corn") { // start of easter egg 1
