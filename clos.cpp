@@ -23,6 +23,81 @@ vector<string> keys;
 vector<string> values;
 int lengthOfVars = 0;
 
+// Function to initialize the grid with '*'
+vector<vector<char>> initializeGrid(int width, int height) {
+    return vector<vector<char>>(height, vector<char>(width, '*'));
+}
+
+// Function to plot the line y = mx + b on the grid with decimal precision
+void plotLine(vector<vector<char>>& grid, double m, double b, double precision) {
+    int width = grid[0].size();
+    int height = grid.size();
+    int originX = width / 2;
+    int originY = height / 2;
+
+    // Draw x and y axes
+    for (int x = 0; x < width; ++x) {
+        grid[originY][x] = '-';
+    }
+    for (int y = 0; y < height; ++y) {
+        grid[y][originX] = '|';
+    }
+    
+    // Adjust coordinates to match the grid
+    for (double x = -originX; x <= originX; x += precision) {
+        int gridX = static_cast<int>(round(x + originX));
+        int gridY = static_cast<int>(round(m * x + b));
+        int gridYInverse = originY - gridY;
+
+        if (gridX >= 0 && gridX < width && gridYInverse >= 0 && gridYInverse < height) {
+            grid[gridYInverse][gridX] = '@'; // Plot the line point
+        }
+    }
+
+    grid[originY][originX] = '+'; // Intersection of axes
+}
+
+// Function to print the grid
+void printGrid(const vector<vector<char>>& grid) {
+    int size = grid.size();
+    int range = size / 2; // for 20x20, the range will be from -10 to 10
+
+    // Print grid with y-axis labels
+    for (int i = 0; i < size; ++i) {
+        int yAxisLabel = range - i;
+        if (i == range) {
+            cout << "   "; // For center axis
+        } else {
+            if(yAxisLabel!=-10){
+                cout << setw(2) << yAxisLabel << ' ';
+            }else{
+                cout << setw(2) << 10 << ' ';
+            }
+        }
+        for (int j = 0; j < size; ++j) {
+            if (grid[i][j] == '@') {
+                cout << "\033[32m" << grid[i][j] << "\033[37m";
+            } else {
+                cout << grid[i][j];
+            }
+            cout << ' ';
+        }
+        cout << '\n';
+    }
+
+    // Print x-axis labels
+    /*cout << "   ";
+    for (int j = 0; j < size; ++j) {
+        int xAxisLabel = j - range; // for 20x20, labels range from -10 to 10
+        if (j == range) {
+            cout << "0 ";
+        } else {
+            cout << setw(2) << xAxisLabel << ' ';
+        }
+    }*/
+    cout << '\n';
+}
+
 static void
 list_dir(const char *path) { // helper function one for the LS command
   struct dirent *entry;
@@ -70,7 +145,7 @@ int fact(int a) { // helper founction for combination, permutation, and
 }
 
 int main() { // start of main OS code
-  string version = "0.10";
+  string version = "0.11";
   string command = "";
   double defaultNumVar = 0;
   vector<string> folders;
@@ -78,7 +153,7 @@ int main() { // start of main OS code
 
   mkdir("home/", 0777);
 
-  cout << '\n';
+  cout << "\033[37m" << '\n';
   cout << R"(          _             _             _            _
         /\ \           _\ \          /\ \         / /\
        /  \ \         /\__ \        /  \ \       / /  \
@@ -1302,19 +1377,19 @@ int main() { // start of main OS code
       cin >> temp;
       if (temp == "Y" || temp == "y") {
         cout << "\033[32m"
-             << "Enter number: "
+             << "Enter number (decimal): "
              << "\033[37m";
         double b = 0;
         cin >> b;
         cout << "\033[34m" << log(b) << "\033[37m" << '\n';
       } else {
         cout << "\033[32m"
-             << "Enter base number: "
+             << "Enter base number (whole): "
              << "\033[37m";
         double base = 0;
         cin >> base;
         cout << "\033[32m"
-             << "Enter input number: "
+             << "Enter input number (decimal): "
              << "\033[37m";
         double input = 0;
         cin >> input;
@@ -1330,7 +1405,7 @@ int main() { // start of main OS code
 
     else if (command == "sin" || command == "sine") { // start of SINE
       cout << "\033[32m"
-           << "Enter angle in radians for sine: "
+           << "Enter angle in radians for sine (decimal): "
            << "\033[37m";
       double input = 0;
       cin >> input;
@@ -1343,7 +1418,7 @@ int main() { // start of main OS code
 
     else if (command == "cos" || command == "cosine") { // start of COS
       cout << "\033[32m"
-           << "Enter angle in radians for cosine: "
+           << "Enter angle in radians for cosine (decimal): "
            << "\033[37m";
       double input = 0;
       cin >> input;
@@ -1356,7 +1431,7 @@ int main() { // start of main OS code
 
     else if (command == "tan" || command == "tangent") { // start of TAN
       cout << "\033[32m"
-           << "Enter angle in radians for tangent: "
+           << "Enter angle in radians for tangent (decimal): "
            << "\033[37m";
       double input = 0;
       cin >> input;
@@ -1369,7 +1444,7 @@ int main() { // start of main OS code
 
     else if (command == "csc" || command == "cosecant") { // start of CSC
       cout << "\033[32m"
-           << "Enter angle in radians for cosecant: "
+           << "Enter angle in radians for cosecant (decimal): "
            << "\033[37m";
       double input = 0;
       cin >> input;
@@ -1382,7 +1457,7 @@ int main() { // start of main OS code
 
     else if (command == "sec" || command == "secant") { // start of SEC
       cout << "\033[32m"
-           << "Enter angle in radians for secant: "
+           << "Enter angle in radians (decimal) for secant (decimal): "
            << "\033[37m";
       double input = 0;
       cin >> input;
@@ -1395,7 +1470,7 @@ int main() { // start of main OS code
 
     else if (command == "cot" || command == "cotangent") { // start of COT
       cout << "\033[32m"
-           << "Enter angle in radians for cotangent: "
+           << "Enter angle in radians for cotangent (decimal): "
            << "\033[37m";
       double input = 0;
       cin >> input;
@@ -1408,14 +1483,14 @@ int main() { // start of main OS code
 
     else if (command == "asin" || command == "arcsine") { // start of ASIN
       cout << "\033[32m"
-           << "Enter sine value: "
+           << "Enter sine value (decimal): "
            << "\033[37m";
       double input = 0;
       cin >> input;
 
-      if (input > 1) {
+      if (input > 1 || input < -1) {
         cout << "\033[31m"
-             << "Entered sine value is greater than one. Non real answer."
+             << "Entered sine value is greater than one/less than negative one. Non real answer."
              << "\033[37m" << '\n';
       } else {
         double result = asin(input);
@@ -1427,14 +1502,14 @@ int main() { // start of main OS code
 
     else if (command == "acos" || command == "arccosine") { // start of ACOS
       cout << "\033[32m"
-           << "Enter cosine value: "
+           << "Enter cosine value (decimal): "
            << "\033[37m";
       double input = 0;
       cin >> input;
 
-      if (input > 1) {
+      if (input > 1 || input < -1) {
         cout << "\033[31m"
-             << "Entered cosine value is greater than one. Non real answer."
+             << "Entered cosine value is greater than one/less than negative one. Non real answer."
              << "\033[37m" << '\n';
       } else {
         double result = acos(input);
@@ -1446,7 +1521,7 @@ int main() { // start of main OS code
 
     else if (command == "atan" || command == "arctangent") { // start of ATAN
       cout << "\033[32m"
-           << "Enter tangent value: "
+           << "Enter tangent value (decimal): "
            << "\033[37m";
       double input = 0;
       cin >> input;
@@ -1466,7 +1541,7 @@ int main() { // start of main OS code
 
       if (input == "F" || input == "f") {
         double rad = 0;
-        cout << "Enter radian value: ";
+        cout << "Enter radian value (decimal): ";
         cin >> rad;
 
         double deg = rad * (180 / piVal);
@@ -1474,7 +1549,7 @@ int main() { // start of main OS code
              << "Degrees: " << deg << '.' << "\033[37m" << '\n';
       } else if (input == "T" || input == "t") {
         double deg = 0;
-        cout << "Enter degree value: ";
+        cout << "Enter degree value (decimal): ";
         cin >> deg;
 
         double rad = deg * (piVal / 180);
@@ -1508,9 +1583,9 @@ int main() { // start of main OS code
       cout << "Permutation n permute r." << '\n';
       int n = 0, r = 0;
 
-      cout << "Enter value for n: ";
+      cout << "Enter value for n (whole): ";
       cin >> n;
-      cout << "Enter value for r: ";
+      cout << "Enter value for r (whole): ";
       cin >> r;
 
       if (n < r) {
@@ -1524,7 +1599,7 @@ int main() { // start of main OS code
     } // end of PERMUTATION
 
     else if (command == "factorial") { // start of FACTORIAL
-      cout << "Enter number: ";
+      cout << "Enter number (whole): ";
       int n = 0;
       cin >> n;
 
@@ -1535,9 +1610,9 @@ int main() { // start of main OS code
     else if (command == "rand") { // start of RAND
       int lower = -1;
       int upper = 1;
-      cout << "Enter lower bound for random number: ";
+      cout << "Enter lower bound for random number (whole): ";
       cin >> lower;
-      cout << "Enter upper bound: ";
+      cout << "Enter upper bound (whole): ";
       cin >> upper;
 
       if (lower > upper) {
@@ -2088,9 +2163,9 @@ int main() { // start of main OS code
         
         for(int i=0; i<n; i++){
             int a=0, b=0;
-            cout << "\033[32m" << "Enter coefficient for term " << i+1 << ": " << "\033[37m";
+            cout << "\033[32m" << "Enter coefficient for term " << i+1 << " (whole): " << "\033[37m";
             cin >> a;
-            cout << "\033[32m" << "Enter power for term " << i+1 << ": " << "\033[37m";
+            cout << "\033[32m" << "Enter power for term " << i+1 << " (whole): " << "\033[37m";
             cin >> b;
             
             coeffs.push_back(a);
@@ -2123,9 +2198,9 @@ int main() { // start of main OS code
         
         for(int i=0; i<n; i++){
             int a=0, b=0;
-            cout << "\033[32m" << "Enter coefficient for term " << i+1 << ": " << "\033[37m";
+            cout << "\033[32m" << "Enter coefficient for term " << i+1 << " (whole): " << "\033[37m";
             cin >> a;
-            cout << "\033[32m" << "Enter power for term " << i+1 << ": " << "\033[37m";
+            cout << "\033[32m" << "Enter power for term " << i+1 << " (whole): " << "\033[37m";
             cin >> b;
             
             coeffs.push_back(a);
@@ -2526,7 +2601,7 @@ int main() { // start of main OS code
 
       int lcm = (a / gcd(a, b)) * b;
       cout << "\033[34m"
-           << "LCM: " << lcm << "."
+           << "LCM: " << lcm
            << "\033[37m" << '\n';
     } // end of LCM
 
@@ -2536,7 +2611,7 @@ int main() { // start of main OS code
       cin >> a >> b;
 
       cout << "\033[34m"
-           << "GCD: " << gcd(a, b) << "."
+           << "GCD: " << gcd(a, b)
            << "\033[37m" << '\n';
     } // end of GCD
 
