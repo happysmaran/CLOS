@@ -1,3 +1,5 @@
+//This is the old, terminal based version. People are allowed to take the source code for this version free of charge. The official, GUI based version will be paid-only and closed-source.
+
 #include <cmath>
 #include <complex>
 #include <cstdlib>
