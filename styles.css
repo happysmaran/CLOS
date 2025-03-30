@@ -1,0 +1,69 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+.navLink {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Add transition for color and background-color */
+}
+.navLink:hover {
+    background-color: #ddd;
+    color: black;
+}
+.nav-logo {
+    height: 50px; /* Adjusts the size */
+    margin-right: 10px; /* Add space between the logo and the other links */
+    padding: 15px;
+}
+header {
+    margin-top: 20px; /* Add space between nav bar and header */
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.header-text {
+    display: flex;
+    flex-direction: column; /* Ensure h1 elements are on different lines */
+}
+.header-content img {
+    margin-left: 20px; /* Add space between the text and the image */
+}
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.feature-item {
+    text-align: center;
+    padding: 15px;
+    margin: 5px;
+    justify-self: center;
+    flex: 0 0 calc(30% - 30px);
+}
+.feature-item img {
+    width: 100%;
+    height: auto;
+}
+.padding{
+    padding: 20px;
+}
+.padding-center{
+    padding: 20px;
+    text-align: center;
+}
+.copyright{
+    text-align: center;
+}
