@@ -67,3 +67,258 @@ header {
 .copyright{
     text-align: center;
 }
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    background-color:#bdbdbd
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: grey;
+    color: white;
+}
+
+.nav-links a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+}
+
+.nav-links .cta {
+    background-color: #bdbdbd;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+}
+
+.nav-links .cta:hover {
+    background-color: #ddd;
+}
+
+.main-large{
+    font-size: large;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.main-download{
+    font-size: large;
+    margin-top: 50px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 1rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.main-download:hover{
+    background-color: #ddd;
+}
+
+.hero {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background: #bdbdbd;
+    color: black;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-image {
+    max-width: 40%;
+}
+
+.contact{
+    margin: 0;
+    justify-content: space-between;
+    padding: 2rem;
+    background: #bdbdbd;
+    color: black;
+}
+
+.about{
+    margin: 0;
+    justify-content: space-between;
+    padding: 2rem;
+    background: #bdbdbd;
+    color: black;
+}
+
+.buffer{
+    padding: 5px;
+}
+
+.features {
+    padding: 2rem;
+    background-color: #bdbdbd;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+}
+
+.feature-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover{
+    transform: scale(1.1);
+}
+
+.features-grid-alt {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.footer {
+    background-color: #bdbdbd;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.download-section {
+    padding: 20px;
+    background-color: #eee;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.download-section:hover{
+    transform: scale(1.1);
+}
+
+.download-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.download-links p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.download-links a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.latest-tag{
+    background-color: #1eff00c1;
+    color: black;
+    padding: 10px 10px;
+    width: 9rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.red-text {
+    color: red;
+}
+
+.download-links a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 8px;
+    margin-top: -22px;
+    margin-left: 20%;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.next {
+    right: 2%;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev{
+    left: 2%;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slide-image {
+    display: none;
+    width: 66.66%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 60%;
+    transform: translateX(-50%);
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.slide-image.active {
+    display: block;
+    position: relative;
+    opacity: 1;
+    z-index: 1;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}

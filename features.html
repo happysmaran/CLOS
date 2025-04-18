@@ -3,50 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="CLOS is an offline graphical utility which is focused on Math.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLOS - Features</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
         <a href="index.html" title="Home"><img src="images/logo.png" alt="CLOS Logo" class="nav-logo"></a>
-        <a class="navLink" href="about.html">About</a>
-        <a class="navLink" href="features.html">Features</a>
-        <a class="navLink" href="contact.html">Contact</a>
-        <a class="navLink" href="download.html">Download</a>
+        <div class="nav-links">
+            <a class="navLink" href="about.html">About</a>
+            <a class="navLink" href="features.html">Features</a>
+            <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink cta" href="download.html">Download</a>
+        </div>
     </nav>
-    <header>
-        <div class="header-content">
+    <header class="hero">
+        <div class="hero-content">
             <h1>CLOS Features</h1>
+            <h3>Explore our features</h3>
         </div>
     </header>
-    <section class="features-grid padding">
-        <div class="feature-item">
-            <h3>Basic Math Functions</h3>
-            <img src="images/features/demo_add.png" alt="Addition demonstration">
-        </div>
-        <div class="feature-item">
-            <h3>Trigonometry</h3>
-            <img src="images/features/demo_cosine.png" alt="Cosine demonstration">
-        </div>
-        <div class="feature-item">
-            <h3>Linear/Quadratic Solver</h3>
-            <img src="images/features/demo_quadraticsolve.png" alt="Quadratic solver demonstration">
-        </div>
-        <div class="feature-item">
-            <h3>Linear/Quadratic Grapher</h3>
-            <img src="images/features/demo_linegraph.png" alt="Line grapher demonstration">
-        </div>
-        <div class="feature-item">
-            <h3>Miscellaneous Math Functions</h3>
-            <img src="images/features/demo_factorial.png" alt="Factorial demonstration">
-        </div>
-        <div class="feature-item">
-            <h3>Spreadsheet (Beta)</h3>
-            <img src="images/features/demo_spreadsheet.png" alt="Spreadsheet demonstration">
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Basic Math Functions</h3>
+                <img src="images/features/demo_add.png" alt="Addition demonstration">
+            </div>
+            <div class="feature-item">
+                <h3>Trigonometry</h3>
+                <img src="images/features/demo_cosine.png" alt="Cosine demonstration">
+            </div>
+            <div class="feature-item">
+                <h3>Linear/Quadratic Solver</h3>
+                <img src="images/features/demo_quadraticsolve.png" alt="Quadratic solver demonstration">
+            </div>
+            <div class="feature-item">
+                <h3>Linear/Quadratic Grapher</h3>
+                <img src="images/features/demo_linegraph.png" alt="Line grapher demonstration">
+            </div>
+            <div class="feature-item">
+                <h3>Derivative/Integral Solver</h3>
+                <img src="images/features/demo_derivative.png" alt="Indefinite derivative solver demonstration">
+            </div>
+            <div class="feature-item">
+                <h3>Miscellaneous Math Functions</h3>
+                <img src="images/features/demo_factorial.png" alt="Factorial demonstration">
+            </div>
+            <div class="feature-item">
+                <h3>Spreadsheet (Beta)</h3>
+                <img src="images/features/demo_spreadsheet.png" alt="Spreadsheet demonstration">
+            </div>
+            <div class="feature-item">
+                <h3>3D Rendering [EXPERIMENTAL]</h3>
+                <img src="images/features/demo_3d.png" alt="3D Cube demonstration">
+            </div>
         </div>
     </section>
-    <footer class="copyright">
-        <p>&copy; 2025 CLOS. All rights reserved.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 CLOS. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/happysmaran/CLOS/releases"><img src="images/github.png" target="_blank" height=25px alt="GitHub"></a>
+                <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" target="_blank" height=25px alt="Email"></a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

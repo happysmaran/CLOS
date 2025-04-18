@@ -2,44 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="CLOS is an offline graphical utility which is focused on Math.">
+    <meta name="description" content="CLOS is an offline graphical utility focused on Math.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLOS - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
         <a href="index.html" title="Home"><img src="images/logo.png" alt="CLOS Logo" class="nav-logo"></a>
-        <a class="navLink" href="about.html">About</a>
-        <a class="navLink" href="features.html">Features</a>
-        <a class="navLink" href="contact.html">Contact</a>
-        <a class="navLink" href="download.html">Download</a>
+        <div class="nav-links">
+            <a class="navLink" href="about.html">About</a>
+            <a class="navLink" href="features.html">Features</a>
+            <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink cta" href="download.html">Download</a>
+        </div>
     </nav>
-    <header>
-        <div class="header-content">
-            <div class="header-text">
-                <h1>Welcome to CLOS</h1>
-                <h1>An offline mathematical tool</h1>
-            </div>
-            <img width="25%" height="auto" src="images/index/demo_image1.png" alt="CLOS UI home">
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to CLOS</h1>
+            <p class="main-large">An offline mathematical tool for advanced calculations and graphing.</p>
+            <a class="main-download" href="download.html">Download Now</a>
+        </div>
+        <div class="slideshow-container">
+            <img class="slide-image" src="images/index/demo_image1.png" alt="CLOS UI home">
+            <img class="slide-image" src="images/index/demo_image2.png" alt="CLOS UI alternate view">
+            <img class="slide-image" src="images/index/demo_image3.png" alt="CLOS UI advanced view">
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
         </div>
     </header>
-    <section class="padding-center">
-        <h3>Version 0.12 - The GUI Update - out now&excl;</h3>
-        <h4>Get it <a href="https://github.com/happysmaran/CLOS/releases" target="_blank">here</a></h4>
+    <section class="features">
+        <h2>Overview of Features</h2>
+        <div class="features-grid-alt">
+            <div class="feature-item">
+                <h3>Basic Calculator</h3>
+                <p>Perform basic arithmetic operations with ease.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Equation Solver</h3>
+                <p>Handle complex equations, including non-real numbers.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Graphing Tools</h3>
+                <p>Visualize lines and quadratic equations effortlessly.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Advanced Math</h3>
+                <p>Compute derivatives, integrals, and more.</p>
+            </div>
+        </div>
     </section>
-    <section>
-        <h3>Overview of Features</h3>
-        <ul>
-            <li>Basic calculator functions</li>
-            <li>Equation solver capable of handling non-real numbers</li>
-            <li>Line and Quadratic grapher</li>
-            <li>Advanced equation solving</li>
-            <li>Derivatives and integrals</li>
-            <li>Trigonometry and logarithms</li>
-        </ul>
-    </section>
-    <footer class="copyright">
-        <p>&copy; 2025 CLOS. All rights reserved.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 CLOS. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/happysmaran/CLOS/releases"><img src="images/github.png" target="_blank" height=25px alt="GitHub"></a>
+                <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" target="_blank" height=25px alt="Email"></a>
+            </div>
+        </div>
     </footer>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide-image');
+    
+        function showSlides() {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+            });
+            slideIndex = (slideIndex + 1) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+    
+        // Initial display
+        if (slides.length > 0) {
+            slides[0].classList.add('active');
+            function changeSlide(direction) {
+                slides[slideIndex].classList.remove('active');
+                slideIndex = (slideIndex + direction + slides.length) % slides.length;
+                slides[slideIndex].classList.add('active');
+            }
+            setInterval(showSlides, 2000);
+        }
+    </script>
 </body>
 </html>

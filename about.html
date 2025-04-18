@@ -3,40 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="CLOS is an offline graphical utility which is focused on Math.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLOS - About</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
         <a href="index.html" title="Home"><img src="images/logo.png" alt="CLOS Logo" class="nav-logo"></a>
-        <a class="navLink" href="about.html">About</a>
-        <a class="navLink" href="features.html">Features</a>
-        <a class="navLink" href="contact.html">Contact</a>
-        <a class="navLink" href="download.html">Download</a>
+        <div class="nav-links">
+            <a class="navLink" href="about.html">About</a>
+            <a class="navLink" href="features.html">Features</a>
+            <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink cta" href="download.html">Download</a>
+        </div>
     </nav>
-    <header>
-        <div class="header-content">
+    <header class="hero">
+        <div class="hero-content">
             <h1>Welcome to CLOS!</h1>
         </div>
     </header>
-    <section class="padding"> <!-- padding so that it does not look ugly -->
-        <h3>What is CLOS&quest;</h3>
+    <section class="about">
+        <h2>What is CLOS?</h2>
         <p>CLOS, also known as the Command Line Operating System, was originally a terminal program which is focused on Math that was later converted to a user-friendly GUI.</p>
-        <p>It is a calculator that comes with a linear and quadratic equation solve capable of handling non real numbers.</p>
-        <p>It also has several features pertaining to graphing, derivatives, integrals, trigonometry, logarithms, algebra, and much more</p>
-    </section>
-    <section class="padding">
-        <h3>Why CLOS&quest;</h3>
+        <p>It is a calculator that comes with a linear and quadratic equation solver capable of handling non-real numbers.</p>
+        <p>It also has several features pertaining to graphing, derivatives, integrals, trigonometry, logarithms, algebra, and much more.</p>
+        <p class="buffer"></p>
+        <h2>Why CLOS?</h2>
         <p>CLOS is a great tool for students and professionals alike. It is useful for students to learn and understand math concepts, and for professionals to quickly solve math problems.</p>
-        <p>It is also a great tool for teachers to quickly demonstrate certain math concepts to students, as it contains step-by-step solving</p>
+        <p>It is also a great tool for teachers to quickly demonstrate certain math concepts to students, as it contains step-by-step solving.</p>
+        <p class="buffer"></p>
+        <h2>Why the name "CLOS"?</h2>
+        <p>CLOS stands for "Command Line Operating System," and was originally going to be a terminal-based operating system. But then I realized that a non-Unix-based OS with no connectivity is not a good idea.</p>
+        <p>Hence, I turned it into a terminal tool that runs on an existing system, and it is now a graphical application.</p>
     </section>
-    <section class="padding">
-        <h3>Why the name "CLOS&quest;"</h3>
-        <p>CLOS stands for "Command Line Operating System," and was originally going to be a terminal-based operating system. But then I realized that a non-unix based OS with no connectivity is not a good idea.</p>
-        <p>Hence, I turned it into a terminal tool that runs on an existing system, and is now a graphical application.</p>
-    </section>
-    <footer class="copyright">
-        <p>&copy; 2025 CLOS. All rights reserved.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 CLOS. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/happysmaran/CLOS/releases"><img src="images/github.png" target="_blank" height=25px alt="GitHub"></a>
+                <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" target="_blank" height=25px alt="Email"></a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
