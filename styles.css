@@ -17,7 +17,7 @@ nav {
     transition: color 0.3s ease, background-color 0.3s ease; /* Add transition for color and background-color */
 }
 .navLink:hover {
-    background-color: #ddd;
+    background-color: #fff;
     color: black;
 }
 .nav-logo {
@@ -46,13 +46,67 @@ header {
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .feature-item {
     text-align: center;
     padding: 15px;
     margin: 5px;
     justify-self: center;
     flex: 0 0 calc(30% - 30px);
+    transition: background-color 0.3s ease; /* Transition only background-color */
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+/* Specific background colors */
+.feature-item.bg1 {
+    background-color: #e6f8ff;
+}
+
+.feature-item.bg2 {
+    background-color: #fff4e6;
+}
+
+.feature-item.bg3 {
+    background-color: #e6fff9;
+}
+
+.feature-item.bg4 {
+    background-color: #e7ffe6;
+}
+
+.feature-item.bg5 {
+    background-color: #fbffe6;
+}
+
+/* Hover effect */
+.feature-item.bg1:hover {
+    background-color: #cceeff;
+    transform: scale(1.1);
+}
+
+.feature-item.bg2:hover {
+    background-color: #ffe6cc;
+    transform: scale(1.1);
+}
+
+.feature-item.bg3:hover {
+    background-color: #ccffe6;
+    transform: scale(1.1);
+}
+
+.feature-item.bg4:hover {
+    background-color: #ccffcc;
+    transform: scale(1.1);
+}
+
+.feature-item.bg5:hover {
+    background-color: #ffffcc;
+    transform: scale(1.1);
+}
+
 .feature-item img {
     width: 100%;
     height: auto;
@@ -103,7 +157,8 @@ html {
 }
 
 .nav-links .cta:hover {
-    background-color: #ddd;
+    background-color: blue;
+    color: white;
 }
 
 .main-large{
@@ -125,7 +180,8 @@ html {
 }
 
 .main-download:hover{
-    background-color: #ddd;
+    background-color: blue;
+    color: white;
 }
 
 .hero {
@@ -175,18 +231,6 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1rem;
-}
-
-.feature-item {
-    background: white;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.feature-item:hover{
-    transform: scale(1.1);
 }
 
 .features-grid-alt {
