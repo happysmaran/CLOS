@@ -11,6 +11,11 @@
 <body>
     <nav class="navbar">
         <a href="index.html" title="Home"><img src="images/logo.png" alt="CLOS Logo" class="nav-logo"></a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="nav-links">
             <a class="navLink" href="index.html">Home</a>
             <a class="navLink" href="about.html">About</a>
@@ -26,11 +31,20 @@
             <a class="main-download" href="download.html">Download Now</a>
         </div>
         <div class="slideshow-container">
-            <img class="slide-image" src="images/index/demo_image1.png" alt="CLOS UI home">
-            <img class="slide-image" src="images/index/demo_image2.png" alt="CLOS UI alternate view">
-            <img class="slide-image" src="images/index/demo_image3.png" alt="CLOS UI advanced view">
+            <div class="slides-wrapper">
+                <img class="slide-image" src="images/index/demo_image1.png" alt="CLOS UI home">
+                <img class="slide-image" src="images/index/demo_image2.png" alt="CLOS UI alternate view">
+                <img class="slide-image" src="images/index/demo_image3.png" alt="CLOS UI advanced view">
+            </div>
             <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
             <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            <button class="slide-control" onclick="toggleSlideshow()" title="Pause/Play slideshow">⏸️</button>
+            <div class="slide-indicators">
+                <span class="slide-dot" onclick="currentSlide(0)"></span>
+                <span class="slide-dot" onclick="currentSlide(1)"></span>
+                <span class="slide-dot" onclick="currentSlide(2)"></span>
+            </div>
+            <div class="slide-progress"></div>
         </div>
     </header>
     <section class="features">
@@ -38,20 +52,38 @@
         <div class="features-grid-alt">
             <div class="feature-item bg1">
                 <h3>Basic Calculator</h3>
-                <p>Perform basic arithmetic operations with ease.</p>
+                <p>Perform basic arithmetic operations with ease and precision.</p>
             </div>
             <div class="feature-item bg2">
                 <h3>Equation Solver</h3>
-                <p>Handle complex equations, including non-real numbers.</p>
+                <p>Handle complex equations, including non-real numbers and step-by-step solutions.</p>
             </div>
             <div class="feature-item bg3">
                 <h3>Graphing Tools</h3>
-                <p>Visualize lines and quadratic equations effortlessly.</p>
+                <p>Visualize mathematical functions with advanced graphing capabilities.</p>
             </div>
             <div class="feature-item bg4">
                 <h3>Advanced Math</h3>
-                <p>Compute derivatives, integrals, and more.</p>
+                <p>Compute derivatives, integrals, trigonometry, and more complex operations.</p>
             </div>            
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Why Choose CLOS?</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-item">
+                <h3>For Students</h3>
+                <p>Learn math concepts with step-by-step solutions and visual representations that make complex topics easier to understand.</p>
+            </div>
+            <div class="testimonial-item">
+                <h3>For Educators</h3>
+                <p>Demonstrate mathematical concepts effectively in the classroom with powerful visualization and solving tools.</p>
+            </div>
+            <div class="testimonial-item">
+                <h3>For Professionals</h3>
+                <p>Solve complex mathematical problems quickly and accurately with our comprehensive suite of tools.</p>
+            </div>
         </div>
     </section>
     <footer class="footer">
@@ -65,26 +97,109 @@
     </footer>
     <script>
         let slideIndex = 0;
+        let slideInterval;
+        let isPlaying = true;
+        let progressInterval;
+        let progressWidth = 0;
+        const slideDisplayTime = 4000; // 4 seconds
+        const progressUpdateInterval = 50; // 50ms updates
+        
         const slides = document.querySelectorAll('.slide-image');
+        const dots = document.querySelectorAll('.slide-dot');
+        const progressBar = document.querySelector('.slide-progress');
+        const controlButton = document.querySelector('.slide-control');
+        const slidesWrapper = document.querySelector('.slides-wrapper');
+    
+        function updateIndicators() {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === slideIndex);
+            });
+        }
+        
+        function updateSlidePosition() {
+            const translateX = -slideIndex * 100;
+            slidesWrapper.style.transform = `translateX(${translateX}%)`;
+        }
+        
+        function updateProgress() {
+            if (!isPlaying) return;
+            
+            progressWidth += (100 / (slideDisplayTime / progressUpdateInterval));
+            if (progressWidth >= 100) {
+                progressWidth = 0;
+                showSlides();
+            }
+            progressBar.style.width = progressWidth + '%';
+        }
+        
+        function resetProgress() {
+            progressWidth = 0;
+            progressBar.style.width = '0%';
+        }
     
         function showSlides() {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-            });
             slideIndex = (slideIndex + 1) % slides.length;
-            slides[slideIndex].classList.add('active');
+            updateSlidePosition();
+            updateIndicators();
+            resetProgress();
+        }
+        
+        function changeSlide(direction) {
+            slideIndex = (slideIndex + direction + slides.length) % slides.length;
+            updateSlidePosition();
+            updateIndicators();
+            resetProgress();
+        }
+        
+        function currentSlide(index) {
+            slideIndex = index;
+            updateSlidePosition();
+            updateIndicators();
+            resetProgress();
+        }
+        
+        function toggleSlideshow() {
+            isPlaying = !isPlaying;
+            controlButton.textContent = isPlaying ? '⏸️' : '▶️';
+            controlButton.title = isPlaying ? 'Pause slideshow' : 'Play slideshow';
+            
+            if (!isPlaying) {
+                clearInterval(slideInterval);
+                clearInterval(progressInterval);
+            } else {
+                startSlideshow();
+            }
+        }
+        
+        function startSlideshow() {
+            progressInterval = setInterval(updateProgress, progressUpdateInterval);
         }
     
         // Initial display
         if (slides.length > 0) {
-            slides[0].classList.add('active');
-            function changeSlide(direction) {
-                slides[slideIndex].classList.remove('active');
-                slideIndex = (slideIndex + direction + slides.length) % slides.length;
-                slides[slideIndex].classList.add('active');
-            }
-            setInterval(showSlides, 2000);
+            updateSlidePosition();
+            updateIndicators();
+            startSlideshow();
         }
+
+        // Hamburger menu functionality
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>

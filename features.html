@@ -11,6 +11,11 @@
 <body>
     <nav class="navbar">
         <a href="index.html" title="Home"><img src="images/logo.png" alt="CLOS Logo" class="nav-logo"></a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="nav-links">
             <a class="navLink" href="index.html">Home</a>
             <a class="navLink" href="about.html">About</a>
@@ -19,7 +24,7 @@
             <a class="navLink cta" href="download.html">Download</a>
         </div>
     </nav>
-    <header class="hero">
+    <header class="hero compact">
         <div class="hero-content">
             <h1>CLOS Features</h1>
             <h3>Explore our features</h3>
@@ -70,5 +75,23 @@
             </div>
         </div>
     </footer>
+<script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

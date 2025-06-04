@@ -11,6 +11,11 @@
 <body>
     <nav class="navbar">
         <a href="index.html" title="Home"><img src="images/logo.png" alt="CLOS Logo" class="nav-logo"></a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="nav-links">
             <a class="navLink" href="index.html">Home</a>
             <a class="navLink" href="about.html">About</a>
@@ -19,16 +24,39 @@
             <a class="navLink cta" href="download.html">Download</a>
         </div>
     </nav>
-    <header class="hero">
+    <header class="hero compact">
         <div class="hero-content">
             <h1>Problems? Suggestions? Look here</h1>
         </div>
     </header>
     <section class="contact">
-        <h2>Contact</h2>
-        <p>If you have any problems, suggestions, or feedback, feel free to contact me at <a href="mailto:smaranvallabhaneni@gmail.com" target="_blank">smaranvallabhaneni@gmail.com</a></p>
-        <h2>Instruction Manual</h2>
-        <p>The current user manual found at GitHub is made for the older 0.11 Terminal version and can be found <a href="https://github.com/happysmaran/CLOS/blob/main/CLOS%20User%20Manual.pdf" target="_blank">here</a>. A new updated manual will come out soon.</p>
+        <div class="contact-content">
+            <div class="contact-section">
+                <h2>Get in Touch</h2>
+                <p>Have questions, suggestions, or feedback? We'd love to hear from you!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email Support</h3>
+                        <p><a href="mailto:smaranvallabhaneni@gmail.com" target="_blank">smaranvallabhaneni@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>GitHub Repository</h3>
+                        <p><a href="https://github.com/happysmaran/CLOS/releases" target="_blank">View Source & Releases</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h2>Documentation</h2>
+                <div class="documentation-info">
+                    <div class="doc-item">
+                        <h3>User Manual</h3>
+                        <p>The current user manual is designed for the terminal version (0.11). A comprehensive manual for the GUI version is coming soon.</p>
+                        <a href="https://github.com/happysmaran/CLOS/blob/main/CLOS%20User%20Manual.pdf" target="_blank" class="doc-link">Download Current Manual</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <footer class="footer">
         <div class="footer-content">
@@ -39,5 +67,23 @@
             </div>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

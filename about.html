@@ -11,6 +11,11 @@
 <body>
     <nav class="navbar">
         <a href="index.html" title="Home"><img src="images/logo.png" alt="CLOS Logo" class="nav-logo"></a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="nav-links">
             <a class="navLink" href="index.html">Home</a>
             <a class="navLink" href="about.html">About</a>
@@ -19,29 +24,49 @@
             <a class="navLink cta" href="download.html">Download</a>
         </div>
     </nav>
-    <header class="hero">
+    <header class="hero compact">
         <div class="hero-content">
             <h1>Welcome to CLOS!</h1>
         </div>
     </header>
     <section class="about">
-        <h2>What is CLOS?</h2>
-        <p>CLOS, also known as the Command Line Operating System, was originally a terminal program which is focused on Math that was later converted to a user-friendly GUI.</p>
-        <p>It is a calculator that comes with a linear and quadratic equation solver capable of handling non-real numbers.</p>
-        <p>It also has several features pertaining to graphing, derivatives, integrals, trigonometry, logarithms, algebra, and much more.</p>
-        <p class="buffer"></p>
-        <h2>Why CLOS?</h2>
-        <p>CLOS is a great tool for students and professionals alike. It is useful for students to learn and understand math concepts, and for professionals to quickly solve math problems.</p>
-        <p>It is also a great tool for teachers to quickly demonstrate certain math concepts to students, as it contains step-by-step solving.</p>
-        <p class="buffer"></p>
-        <h2>Why the name "CLOS"?</h2>
-        <p>CLOS stands for "Command Line Operating System," and was originally going to be a terminal-based operating system. But then I realized that a non-Unix-based OS with no connectivity is not a good idea.</p>
-        <p>Hence, I turned it into a terminal tool that runs on an existing system, and it is now a graphical application.</p>
-        <p class="buffer"></p>
-        <h2>Mission Statement</h2>
-        <p>Our mission is to help students and educators by providing an accessible, offline mathematical tool that helps simplify and calculate complex computations and visualizations.</p>
-        <p>We believe in making advanced concepts approachable, encouraging a deeper understanding and appreciation for mathematics.</p>
-        <p class="buffer"></p>
+        <div class="about-content">
+            <div class="about-section">
+                <h2>What is CLOS?</h2>
+                <p>CLOS, also known as the Command Line Operating System, was originally a terminal program focused on mathematics that evolved into a user-friendly graphical application.</p>
+                <p>It's a comprehensive calculator featuring linear and quadratic equation solvers capable of handling complex numbers, along with advanced tools for graphing, calculus, trigonometry, logarithms, algebra, and much more.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Why Choose CLOS?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>For Students</h3>
+                        <p>Learn and understand mathematical concepts with step-by-step solutions and visual representations.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>For Educators</h3>
+                        <p>Demonstrate complex mathematical concepts effectively with powerful visualization tools.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>For Professionals</h3>
+                        <p>Solve complex mathematical problems quickly and accurately in an offline environment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>The Story Behind CLOS</h2>
+                <p>CLOS stands for "Command Line Operating System" and was originally conceived as a terminal-based operating system. However, realizing the limitations of a non-Unix-based OS without connectivity, the project evolved into a powerful mathematical tool that runs on existing systems.</p>
+                <p>What started as a command-line utility has now transformed into an intuitive graphical application, making advanced mathematics accessible to everyone.</p>
+            </div>
+
+            <div class="about-section mission">
+                <h2>Our Mission</h2>
+                <p>We're dedicated to helping students and educators by providing an accessible, offline mathematical tool that simplifies complex computations and creates stunning visualizations.</p>
+                <p>Our goal is to make advanced mathematical concepts approachable, fostering a deeper understanding and appreciation for the beauty of mathematics.</p>
+            </div>
+        </div>
     </section>
     <footer class="footer">
         <div class="footer-content">
@@ -52,5 +77,23 @@
             </div>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
