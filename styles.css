@@ -1,4 +1,3 @@
-
 * {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     box-sizing: border-box;
@@ -68,6 +67,13 @@ body {
     background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Special hover effect for New Design link on non-showcase pages */
+body:not(.showcase-page) .nav-links a[href="showcase.html"]:hover {
+    background: linear-gradient(135deg, #9c27b0 0%, #673ab7 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
 }
 
 /* Hamburger Menu Styles */
@@ -158,7 +164,7 @@ body {
     border-radius: 50px;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .main-download:hover {
@@ -681,6 +687,199 @@ body {
     box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
+/* Showcase Page Styles */
+.showcase-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.showcase-page .navbar {
+    background: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+}
+
+.showcase-page .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.showcase-page .hero-content h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.showcase-page .hero-content h3 {
+    color: #f0f0f0;
+}
+
+.showcase-page .main-large {
+    color: #e8e8e8;
+}
+
+.showcase-page .footer {
+    background: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+}
+
+.showcase-image-container {
+    position: relative;
+    max-width: 45%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    animation: slideInRight 0.8s ease-out;
+    background: white;
+    padding: 15px;
+}
+
+.showcase-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.showcase-image:hover {
+    transform: scale(1.02);
+}
+
+.showcase-overlay {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 10;
+}
+
+.new-badge {
+    background: linear-gradient(135deg, #9c27b0 0%, #673ab7 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+    }
+    to {
+        box-shadow: 0 4px 20px rgba(156, 39, 176, 0.6);
+    }
+}
+
+.showcase-highlights {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.showcase-page .showcase-highlights h2 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.showcase-highlights h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.highlight-item {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid #4CAF50;
+}
+
+.highlight-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.highlight-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+}
+
+.comparison-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #bdbdbd 0%, #a8a8a8 100%);
+}
+
+.comparison-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+}
+
+.evolution-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.evolution-content > p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #555;
+}
+
+.evolution-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.evolution-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.evolution-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.evolution-item h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+.evolution-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
 /* Animations */
 @keyframes slideInLeft {
     from {
@@ -710,7 +909,7 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.5rem;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -722,11 +921,11 @@ body {
         padding: 1rem;
         position: relative;
     }
-    
+
     .hamburger {
         display: flex;
     }
-    
+
     .nav-links {
         position: absolute;
         top: 100%;
@@ -741,11 +940,11 @@ body {
         transition: max-height 0.3s ease;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-    
+
     .nav-links.active {
         max-height: 300px;
     }
-    
+
     .nav-links a {
         padding: 1rem;
         font-size: 1rem;
@@ -753,83 +952,103 @@ body {
         text-align: center;
         display: block;
     }
-    
+
     .nav-links a:last-child {
         border-bottom: none;
     }
-    
+
     .hero {
         flex-direction: column;
         text-align: center;
         padding: 2rem 1rem;
         min-height: 50vh;
     }
-    
+
     .hero.compact {
         padding: 1rem;
         min-height: 20vh;
     }
-    
+
     .hero-content {
         max-width: 100%;
         margin-bottom: 2rem;
     }
-    
+
     .hero-content h1 {
         font-size: 2.2rem;
         margin-bottom: 0.5rem;
     }
-    
+
     .hero-content h3 {
         font-size: 1.2rem;
         margin-bottom: 1rem;
     }
-    
+
     .main-large {
         font-size: 1.1rem;
         margin-bottom: 1.5rem;
     }
-    
+
     .slideshow-container {
         max-width: 100%;
         margin-top: 1rem;
     }
-    
+
+    .showcase-image-container {
+        max-width: 100%;
+        margin-top: 1rem;
+        padding: 10px;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .evolution-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .showcase-highlights, .comparison-section {
+        padding: 2rem 1rem;
+    }
+
     .features, .about, .contact {
         padding: 2rem 1rem;
     }
-    
+
     .features-grid, .features-grid-alt {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .benefits-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .contact-info, .documentation-info {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .about-section h2, .features h2, .testimonials h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
     }
-    
+
     .download-section {
         margin: 1rem;
         padding: 1.5rem;
@@ -840,78 +1059,78 @@ body {
     .navbar {
         padding: 0.75rem;
     }
-    
+
     .nav-logo {
         height: 40px;
     }
-    
+
     .nav-links a {
         padding: 0.75rem;
         font-size: 0.95rem;
     }
-    
+
     .hero {
         padding: 1.5rem 0.75rem;
     }
-    
+
     .hero.compact {
         padding: 0.75rem;
         min-height: 15vh;
     }
-    
+
     .hero-content h1 {
         font-size: 1.8rem;
         line-height: 1.2;
     }
-    
+
     .hero-content h3 {
         font-size: 1.1rem;
     }
-    
+
     .main-large {
         font-size: 1rem;
     }
-    
+
     .main-download {
         font-size: 1rem;
         padding: 0.75rem 1.5rem;
     }
-    
+
     .features, .about, .contact {
         padding: 1.5rem 0.75rem;
     }
-    
+
     .about-section h2, .features h2, .testimonials h2 {
         font-size: 1.75rem;
     }
-    
+
     .feature-item, .testimonial-item, .benefit-item, .contact-item, .doc-item {
         padding: 1.5rem;
     }
-    
+
     .feature-item h3, .testimonial-item h3, .benefit-item h3, .contact-item h3, .doc-item h3 {
         font-size: 1.2rem;
     }
-    
+
     .feature-item p, .testimonial-item p, .benefit-item p, .contact-item p, .doc-item p {
         font-size: 0.95rem;
     }
-    
+
     .download-section {
         margin: 0.5rem;
         padding: 1.25rem;
     }
-    
+
     .download-section h2 {
         font-size: 1.3rem;
         margin-bottom: 1rem;
     }
-    
+
     .prev, .next {
         padding: 8px 12px;
         font-size: 14px;
     }
-    
+
     .slide-control {
         width: 35px;
         height: 35px;
@@ -919,12 +1138,12 @@ body {
         top: 10px;
         right: 10px;
     }
-    
+
     .slide-dot {
         width: 10px;
         height: 10px;
     }
-    
+
     .slide-indicators {
         bottom: 10px;
         gap: 6px;

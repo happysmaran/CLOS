@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Preview the new CLOS design - modern interface, enhanced performance, better responsiveness, and streamlined tools for mathematical computing. Exclusive sneak peek at the redesigned calculator.">
+    <meta name="keywords" content="CLOS redesign, new design, mathematical calculator interface, modern UI, preview, exclusive, beta design">
+    <meta name="author" content="CLOS Team">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clos-mathematical-tool.replit.app/showcase.html">
+    <meta property="og:title" content="CLOS New Design Preview - Redesigned Mathematical Calculator">
+    <meta property="og:description" content="Exclusive preview of the redesigned CLOS interface. Modern design, enhanced performance, and streamlined mathematical computing tools.">
+    <meta property="og:image" content="https://clos-mathematical-tool.replit.app/images/CLOS13.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://clos-mathematical-tool.replit.app/showcase.html">
+    <meta property="twitter:title" content="CLOS New Design Preview - Redesigned Mathematical Calculator">
+    <meta property="twitter:description" content="Exclusive preview of the redesigned CLOS interface. Modern design, enhanced performance, and streamlined mathematical computing tools.">
+    <meta property="twitter:image" content="https://clos-mathematical-tool.replit.app/images/CLOS13.png">
+    
+    <title>CLOS New Design Preview - Redesigned Mathematical Calculator Interface</title>
+    <link rel="canonical" href="https://clos-mathematical-tool.replit.app/showcase.html">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="showcase-page">
+    <nav class="navbar">
+        <a href="index.html" title="Home"><img src="images/logo.png" alt="CLOS Logo" class="nav-logo"></a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a class="navLink" href="index.html">Home</a>
+            <a class="navLink" href="about.html">About</a>
+            <a class="navLink" href="features.html">Features</a>
+            <a class="navLink" href="showcase.html">New Design</a>
+            <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink cta" href="download.html">Download</a>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>CLOS Redesigned</h1>
+            <h3>Experience the New Interface</h3>
+            <p class="main-large">We're working on a completely redesigned CLOS interface that will make mathematical computing more intuitive and powerful than ever. This exclusive preview shows our progress.</p>
+        </div>
+        <div class="showcase-image-container">
+            <img src="images/CLOS13.png" alt="CLOS Redesigned Interface" class="showcase-image">
+            <div class="showcase-overlay">
+                <span class="new-badge">NEW DESIGN</span>
+            </div>
+        </div>
+    </header>
+    
+    <section class="showcase-highlights">
+        <h2>What's New in the Redesign</h2>
+        <div class="highlights-grid">
+            <div class="highlight-item">
+                <h3>&#127912; Modern Interface</h3>
+                <p>Clean, intuitive design that makes complex mathematical operations more accessible and visually appealing.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>&#9889; Enhanced Performance</h3>
+                <p>Optimized rendering and faster calculations ensure smooth operation even with complex mathematical expressions.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>&#128241; Better Responsiveness</h3>
+                <p>Improved layout that adapts seamlessly across different screen sizes and devices.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>&#128295; Streamlined Tools</h3>
+                <p>Reorganized toolbars and menus make finding and using mathematical functions more intuitive.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 CLOS. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/happysmaran/CLOS/releases"><img src="images/github.png" target="_blank" height=25px alt="GitHub"></a>
+                <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" target="_blank" height=25px alt="Email"></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
