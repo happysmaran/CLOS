@@ -37,42 +37,42 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a class="navLink" href="index.html">Home</a>
-            <a class="navLink" href="about.html">About</a>
-            <a class="navLink" href="features.html">Features</a>
-            <a class="navLink" href="contact.html">Contact</a>
-            <a class="navLink cta" href="download.html">Download</a>
+            <a class="navLink" href="index.html" data-translate="nav_home">Home</a>
+            <a class="navLink" href="about.html" data-translate="nav_about">About</a>
+            <a class="navLink" href="features.html" data-translate="nav_features">Features</a>
+            <a class="navLink" href="contact.html" data-translate="nav_contact">Contact</a>
+            <a class="navLink cta" href="download.html" data-translate="nav_download">Download</a>
         </div>
     </nav>
     <header class="hero compact">
         <div class="hero-content">
-            <h1>Problems? Suggestions? Look here</h1>
+            <h1 data-translate="contact_title">Problems? Suggestions? Look here</h1>
         </div>
     </header>
     <section class="contact">
         <div class="contact-content">
             <div class="contact-section">
-                <h2>Get in Touch</h2>
-                <p>Have questions, suggestions, or feedback? We'd love to hear from you!</p>
+                <h2 data-translate="get_in_touch">Get in Touch</h2>
+                <p data-translate="contact_desc">Have questions, suggestions, or feedback? We'd love to hear from you!</p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h3>Email Support</h3>
+                        <h3 data-translate="email_support">Email Support</h3>
                         <p><a href="mailto:smaranvallabhaneni@gmail.com" target="_blank">smaranvallabhaneni@gmail.com</a></p>
                     </div>
                     <div class="contact-item">
-                        <h3>GitHub Repository</h3>
-                        <p><a href="https://github.com/happysmaran/CLOS/releases" target="_blank">View Source & Releases</a></p>
+                        <h3 data-translate="github_repo">GitHub Repository</h3>
+                        <p><a href="https://github.com/happysmaran/CLOS/releases" target="_blank" data-translate="github_link_text">View Source & Releases</a></p>
                     </div>
                 </div>
             </div>
 
             <div class="contact-section">
-                <h2>Documentation</h2>
+                <h2 data-translate="documentation">Documentation</h2>
                 <div class="documentation-info">
                     <div class="doc-item">
-                        <h3>User Manual</h3>
-                        <p>The current user manual is designed for the terminal version (0.11). A comprehensive manual for the GUI version is coming soon.</p>
-                        <a href="https://github.com/happysmaran/CLOS/blob/main/CLOS%20User%20Manual.pdf" target="_blank" class="doc-link">Download Current Manual</a>
+                        <h3 data-translate="user_manual">User Manual</h3>
+                        <p data-translate="manual_desc">The current user manual is designed for the terminal version (0.11). A comprehensive manual for the GUI version is coming soon.</p>
+                        <a href="https://github.com/happysmaran/CLOS/blob/main/CLOS%20User%20Manual.pdf" target="_blank" class="doc-link" data-translate="download_manual">Download Current Manual</a>
                     </div>
                 </div>
             </div>
@@ -80,13 +80,14 @@
     </section>
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 CLOS. All rights reserved.</p>
+            <p data-translate="copyright">&copy; 2025 CLOS. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://github.com/happysmaran/CLOS/releases"><img src="images/github.png" target="_blank" height=25px alt="GitHub"></a>
                 <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" target="_blank" height=25px alt="Email"></a>
             </div>
         </div>
     </footer>
+    <script src="js/translations.js"></script>
     <script>
         function toggleMenu() {
             const hamburger = document.querySelector('.hamburger');

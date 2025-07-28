@@ -37,68 +37,69 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a class="navLink" href="index.html">Home</a>
-            <a class="navLink" href="about.html">About</a>
-            <a class="navLink" href="features.html">Features</a>
-            <a class="navLink" href="contact.html">Contact</a>
-            <a class="navLink cta" href="download.html">Download</a>
+            <a class="navLink" href="index.html" data-translate="nav_home">Home</a>
+            <a class="navLink" href="about.html" data-translate="nav_about">About</a>
+            <a class="navLink" href="features.html" data-translate="nav_features">Features</a>
+            <a class="navLink" href="contact.html" data-translate="nav_contact">Contact</a>
+            <a class="navLink cta" href="download.html" data-translate="nav_download">Download</a>
         </div>
     </nav>
     <header class="hero compact">
         <div class="hero-content">
-            <h1>CLOS Features</h1>
-            <h3>Explore our features</h3>
+            <h1 data-translate="features_title">CLOS Features</h1>
+            <h3 data-translate="explore_features">Explore our features</h3>
         </div>
     </header>
     <section class="features">
         <div class="features-grid">
             <div class="feature-item bg1">
-                <h3>Basic Math Functions</h3>
+                <h3 data-translate="basic_math_functions">Basic Math Functions</h3>
                 <img src="images/features/demo_add.png" alt="Addition demonstration">
             </div>
             <div class="feature-item bg2">
-                <h3>Trigonometry</h3>
+                <h3 data-translate="trigonometry">Trigonometry</h3>
                 <img src="images/features/demo_cosine.png" alt="Cosine demonstration">
             </div>
             <div class="feature-item bg3">
-                <h3>Linear/Quadratic Solver</h3>
+                <h3 data-translate="linear_quadratic_solver">Linear/Quadratic Solver</h3>
                 <img src="images/features/demo_quadraticsolve.png" alt="Quadratic solver demonstration">
             </div>
             <div class="feature-item bg4">
-                <h3>Linear/Quadratic Grapher</h3>
+                <h3 data-translate="linear_quadratic_grapher">Linear/Quadratic Grapher</h3>
                 <img src="images/features/demo_linegraph.png" alt="Line grapher demonstration">
             </div>
             <div class="feature-item bg5">
-                <h3>Derivative/Integral Solver</h3>
+                <h3 data-translate="derivative_integral">Derivative/Integral Solver</h3>
                 <img src="images/features/demo_derivative.png" alt="Definite derivative solver demonstration">
             </div>
             <div class="feature-item bg3">
-                <h3>Miscellaneous Math Functions</h3>
+                <h3 data-translate="misc_math">Miscellaneous Math Functions</h3>
                 <img src="images/features/demo_degrad.png" alt="Degree to Radian conversion demonstration">
             </div>
             <div class="feature-item bg1">
-                <h3>Spreadsheet</h3>
+                <h3 data-translate="spreadsheet">Spreadsheet</h3>
                 <img src="images/features/demo_spreadsheet.png" alt="Spreadsheet demonstration">
             </div>
             <div class="feature-item bg5">
-                <h3>3D Graphing (Beta)</h3>
+                <h3 data-translate="three_d_graphing">3D Graphing (Beta)</h3>
                 <img src="images/features/demo_3d.png" alt="3D graphing demonstration">
             </div>
             <div class="feature-item bg2">
-                <h3>In-built Help Guides</h3>
+                <h3 data-translate="help_guides">In-built Help Guides</h3>
                 <img src="images/features/demo_helpguides.png" alt="In-built help guides">
             </div>
         </div>
     </section>
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 CLOS. All rights reserved.</p>
+            <p data-translate="copyright">&copy; 2025 CLOS. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://github.com/happysmaran/CLOS/releases"><img src="images/github.png" target="_blank" height=25px alt="GitHub"></a>
                 <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" target="_blank" height=25px alt="Email"></a>
             </div>
         </div>
     </footer>
+    <script src="js/translations.js"></script>
 <script>
         function toggleMenu() {
             const hamburger = document.querySelector('.hamburger');
