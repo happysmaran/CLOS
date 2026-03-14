@@ -77,7 +77,7 @@ const translations = {
         help_guides: "In-built Help Guides",
         
         // Footer
-        copyright: "© 2025 CLOS. All rights reserved."
+        copyright: "© 2026 CLOS. All rights reserved."
     },
     
     es: {
@@ -157,7 +157,7 @@ const translations = {
         help_guides: "Guías de Ayuda Integradas",
         
         // Footer
-        copyright: "© 2025 CLOS. Todos los derechos reservados."
+        copyright: "© 2026 CLOS. Todos los derechos reservados."
     },
     
     fr: {
@@ -237,7 +237,7 @@ const translations = {
         help_guides: "Guides d'Aide Intégrés",
         
         // Footer
-        copyright: "© 2025 CLOS. Tous droits réservés."
+        copyright: "© 2026 CLOS. Tous droits réservés."
     },
     
     de: {
@@ -317,7 +317,7 @@ const translations = {
         help_guides: "Eingebaute Hilfsanleitungen",
         
         // Footer
-        copyright: "© 2025 CLOS. Alle Rechte vorbehalten."
+        copyright: "© 2026 CLOS. Alle Rechte vorbehalten."
     },
     
     zh: {
@@ -397,7 +397,7 @@ const translations = {
         help_guides: "内置帮助指南",
         
         // Footer
-        copyright: "© 2025 CLOS. 保留所有权利。"
+        copyright: "© 2026 CLOS. 保留所有权利。"
     },
     
     ja: {
@@ -477,7 +477,7 @@ const translations = {
         help_guides: "内蔵ヘルプガイド",
         
         // Footer
-        copyright: "© 2025 CLOS. すべての権利が保護されています。"
+        copyright: "© 2026 CLOS. すべての権利が保護されています。"
     },
     
     pt: {
@@ -557,7 +557,7 @@ const translations = {
         help_guides: "Guias de Ajuda Integrados",
         
         // Footer
-        copyright: "© 2025 CLOS. Todos os direitos reservados."
+        copyright: "© 2026 CLOS. Todos os direitos reservados."
     },
     
     ru: {
@@ -637,7 +637,7 @@ const translations = {
         help_guides: "Встроенные Руководства Помощи",
         
         // Footer
-        copyright: "© 2025 CLOS. Все права защищены."
+        copyright: "© 2026 CLOS. Все права защищены."
     },
     
     ar: {
@@ -717,7 +717,7 @@ const translations = {
         help_guides: "أدلة المساعدة المدمجة",
         
         // Footer
-        copyright: "© 2025 CLOS. جميع الحقوق محفوظة."
+        copyright: "© 2026 CLOS. جميع الحقوق محفوظة."
     }
 };
 
