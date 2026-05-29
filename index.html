@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="description" content="CLOS - Advanced offline mathematical calculator and graphing tool. Solve equations, graph functions, compute derivatives, integrals, and more. Free download for Windows and macOS.">
     <meta name="keywords" content="mathematical calculator, graphing calculator, equation solver, offline calculator, mathematical tool, CLOS, calculus, algebra, trigonometry, derivatives, integrals">
-    <meta name="author" content="CLOS Team">
+    <meta name="author" content="Smaran Vallabhaneni">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://clos-mathematical-tool.replit.app/">
+    <meta property="og:url" content="https://smaran-vallabhaneni.com/CLOS/">
     <meta property="og:title" content="CLOS - Advanced Mathematical Calculator & Graphing Tool">
     <meta property="og:description" content="Free offline mathematical calculator with equation solving, graphing, calculus tools and more. Download for Windows and macOS.">
-    <meta property="og:image" content="https://clos-mathematical-tool.replit.app/images/index/demo_image1.png">
+    <meta property="og:image" content="https://smaran-vallabhaneni.com/CLOS/images/index/demo_image1.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://clos-mathematical-tool.replit.app/">
+    <meta property="twitter:url" content="https://smaran-vallabhaneni.com/CLOS/">
     <meta property="twitter:title" content="CLOS - Advanced Mathematical Calculator & Graphing Tool">
     <meta property="twitter:description" content="Free offline mathematical calculator with equation solving, graphing, calculus tools and more. Download for Windows and macOS.">
-    <meta property="twitter:image" content="https://clos-mathematical-tool.replit.app/images/index/demo_image1.png">
+    <meta property="twitter:image" content="https://smaran-vallabhaneni.com/CLOS/images/index/demo_image1.png">
     
     <title>CLOS - Advanced Mathematical Calculator & Graphing Tool | Free Download</title>
-    <link rel="canonical" href="https://clos-mathematical-tool.replit.app/">
+    <link rel="canonical" href="https://smaran-vallabhaneni.com/CLOS/">
     <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -35,14 +35,14 @@
       "@type": "SoftwareApplication",
       "name": "CLOS",
       "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Windows, macOS",
+      "operatingSystem": "Windows, macOS, Linux",
       "description": "Advanced offline mathematical calculator and graphing tool for students, educators, and professionals. Features equation solving, graphing, calculus tools, and more.",
-      "url": "https://clos-mathematical-tool.replit.app/",
-      "downloadUrl": "https://clos-mathematical-tool.replit.app/download.html",
-      "screenshot": "https://clos-mathematical-tool.replit.app/images/index/demo_image1.png",
+      "url": "https://smaran-vallabhaneni.com/CLOS/",
+      "downloadUrl": "https://smaran-vallabhaneni.com/CLOS/download.html",
+      "screenshot": "https://smaran-vallabhaneni.com/CLOS/images/index/demo_image1.png",
       "author": {
         "@type": "Person",
-        "name": "CLOS Team"
+        "name": "Smaran Vallabhaneni"
       },
       "offers": {
         "@type": "Offer",
@@ -80,9 +80,9 @@
                 <img class="slide-image" src="images/index/demo_image2.png" alt="CLOS UI alternate view">
                 <img class="slide-image" src="images/index/demo_image3.png" alt="CLOS UI advanced view">
             </div>
-            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-            <a class="next" onclick="changeSlide(1)">&#10095;</a>
-            <button class="slide-control" onclick="toggleSlideshow()" title="Pause/Play slideshow">⏸️</button>
+            <a class="prev" onclick="changeSlide(-1)">&#9664;</a>
+            <a class="next" onclick="changeSlide(1)">&#9654;</a>
+            <button class="slide-control" onclick="toggleSlideshow()" title="Pause/Play slideshow">&#9208;</button>
             <div class="slide-indicators">
                 <span class="slide-dot" onclick="currentSlide(0)"></span>
                 <span class="slide-dot" onclick="currentSlide(1)"></span>
@@ -91,22 +91,29 @@
             <div class="slide-progress"></div>
         </div>
     </header>
+
+    <section style="text-align: center;">
+        <h2 data-translate="upcoming_features">Next-Gen Interface Evolution</h2>
+        <p>We are actively working on a completely reimagined environment featuring powerful tools, an AI tutor, and a more intuitive user experience.</p>
+        
+        <div class="coming-soon-container">
+            <span class="coming-soon-badge" data-translate="coming_soon">Coming Soon</span>
+            <img src="images/cs.png" alt="CLOS New Aesthetic Preview" class="coming-soon-img">
+        </div>
+    </section>
+
     <section class="features">
         <h2 data-translate="overview_features">Overview of Features</h2>
         <div class="features-grid-alt">
             <div class="feature-item bg1">
-                <h3 data-translate="basic_calculator">Basic Calculator</h3>
-                <p data-translate="basic_calc_desc">Perform basic arithmetic operations with ease and precision.</p>
-            </div>
-            <div class="feature-item bg2">
                 <h3 data-translate="equation_solver">Equation Solver</h3>
                 <p data-translate="equation_solver_desc">Handle complex equations, including non-real numbers and step-by-step solutions.</p>
             </div>
-            <div class="feature-item bg3">
+            <div class="feature-item bg2">
                 <h3 data-translate="graphing_tools">Graphing Tools</h3>
                 <p data-translate="graphing_desc">Visualize mathematical functions with advanced graphing capabilities.</p>
             </div>
-            <div class="feature-item bg4">
+            <div class="feature-item bg3">
                 <h3 data-translate="advanced_math">Advanced Math</h3>
                 <p data-translate="advanced_math_desc">Compute derivatives, integrals, trigonometry, and more complex operations.</p>
             </div>            
@@ -205,7 +212,7 @@
         
         function toggleSlideshow() {
             isPlaying = !isPlaying;
-            controlButton.textContent = isPlaying ? '⏸️' : '▶️';
+            controlButton.textContent = isPlaying ? '\u{23F8}' : '\u{25B6}';
             controlButton.title = isPlaying ? 'Pause slideshow' : 'Play slideshow';
             
             if (!isPlaying) {
