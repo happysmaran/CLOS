@@ -25,6 +25,9 @@
     <title>Download CLOS - Free Mathematical Calculator for Windows & macOS</title>
     <link rel="canonical" href="https://smaran-vallabhaneni.com/CLOS/download.html">
     <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Structured Data for Software Downloads -->
@@ -37,8 +40,8 @@
       "operatingSystem": ["Windows", "macOS"],
       "description": "Advanced mathematical calculator with equation solving, graphing, and calculus capabilities",
       "downloadUrl": "https://github.com/happysmaran/CLOS/releases",
-      "version": "0.12.1",
-      "datePublished": "2025-01-01",
+      "version": "0.13.0",
+      "datePublished": "2026-01-01",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -60,76 +63,179 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a class="navLink" href="index.html" data-translate="nav_home">Home</a>
-            <a class="navLink" href="about.html" data-translate="nav_about">About</a>
-            <a class="navLink" href="features.html" data-translate="nav_features">Features</a>
-            <a class="navLink" href="contact.html" data-translate="nav_contact">Contact</a>
-            <a class="navLink cta" href="download.html" data-translate="nav_download">Download</a>
+            <a class="navLink" href="index.html">Home</a>
+            <a class="navLink" href="about.html">About</a>
+            <a class="navLink" href="features.html">Features</a>
+            <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink cta" href="download.html">Download</a>
         </div>
     </nav>
     <header class="hero compact">
         <div class="hero-content">
-            <h1 data-translate="download_title">Download CLOS</h1>
+            <span class="eyebrow">v0.14 · windows · macos · linux</span>
+            <h1>Download CLOS</h1>
         </div>
     </header>
     <main>
-        <section class="download-section">
-            <h2>CLOS 0.13 - Brand New &#39Stache! Update</h2>
-            <div class="download-links">
-                <p class="latest-tag" data-translate="latest_version">LATEST VERSION</p>
-                <p><span data-translate="windows_exe">Windows Executable:</span> <a href="https://github.com/happysmaran/CLOS/releases/download/stable4/CLOS_Windows.zip" target="_blank" data-translate="download_here">Download here</a></p>
-                <p><span data-translate="macos_exe">macOS Executable:</span> <a href="https://github.com/happysmaran/CLOS/releases/download/stable4/CLOS_Mac.zip" target="_blank" data-translate="download_here">Download here</a></p>
-                <p><span data-translate="user_manual_link">User Manual:</span> TBA</p>
+        <!-- Latest Version Section -->
+        <section class="download-section download-hero-card">
+            <div class="header-flex">
+                <h2>CLOS 0.14 - The Theseus Update</h2>
+                <span class="latest-tag">LATEST VERSION</span>
+            </div>
+            
+            <div class="download-grid">
+                <div class="download-card">
+                    <div>
+                        <h3>Windows</h3>
+                        <p>Standalone Executable (.zip)</p>
+                    </div>
+                    <a href="https://github.com/happysmaran/CLOS/releases/download/stable4/CLOS_Windows.zip" class="main-download" target="_blank">Download for Windows</a>
+                </div>
+                
+                <div class="download-card">
+                    <div>
+                        <h3>macOS</h3>
+                        <p>Standalone Executable (.zip)</p>
+                    </div>
+                    <a href="https://github.com/happysmaran/CLOS/releases/download/stable4/CLOS_Mac.zip" class="main-download" target="_blank">Download for macOS</a>
+                </div>
+
+                <div class="download-card">
+                    <div>
+                        <h3>Linux</h3>
+                        <p>Standalone AppImage (.zip)</p>
+                    </div>
+                    <a href="https://github.com/happysmaran/CLOS/releases/download/stable4/CLOS_Linux.zip" class="main-download" target="_blank">Download for Linux</a>
+                </div>
             </div>
         </section>
+
+        <!-- System Requirements Section -->
         <section class="download-section">
-            <h2>CLOS 0.12.1 - Make Em&#39 Drawings Update</h2>
-            <div class="download-links">
-                <p><span data-translate="windows_exe">Windows Executable:</span> <a href="https://github.com/happysmaran/CLOS/releases/download/stable3/CLOS_Windows.exe" target="_blank" data-translate="download_here">Download here</a></p>
-                <h6 class="red-text" data-translate="no_support">This version no longer recieves support. Use version 0.13.0 or above instead.</h6>
+            <h2>System Requirements</h2>
+            <div class="table-wrapper">
+                <table class="req-table">
+                    <thead>
+                        <tr>
+                            <th>Requirement</th>
+                            <th>Windows</th>
+                            <th>macOS</th>
+                            <th>Linux</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Operating System</strong></td>
+                            <td>Windows 8.1 or newer</td>
+                            <td>macOS 11.0 (Big Sur) or newer</td>
+                            <td>Ubuntu 22.04, Debian 12, Fedora 36 or newer</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Processor</strong></td>
+                            <td>Intel Core i3 / AMD Ryzen 3 or higher</td>
+                            <td>Intel Core i5 or Apple Silicon</td>
+                            <td>Intel Core i3 / AMD Ryzen 3 or higher</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memory (RAM)</strong></td>
+                            <td>4 GB minimum (8 GB recommended)</td>
+                            <td>4 GB minimum (8 GB recommended)</td>
+                            <td>4 GB minimum (8 GB recommended)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storage</strong></td>
+                            <td>1 GB available space</td>
+                            <td>1 GB available space</td>
+                            <td>1 GB available space</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
+
+        <!-- Archive / Older Releases Section -->
         <section class="download-section">
-            <h2>CLOS 0.12 - The GUI Update</h2>
-            <div class="download-links">
-                <p><span data-translate="windows_exe">Windows Executable:</span> <a href="https://github.com/happysmaran/CLOS/releases/download/guibeta/CLOS_Windows.exe" target="_blank" data-translate="download_here">Download here</a></p>
-                <h6 class="red-text" data-translate="no_support">This version no longer recieves support. Use version 0.13.0 or above instead.</h6>
+            <h2>All Releases</h2>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+                Older versions are kept for reference but no longer receive functional updates or active bug fixes.
+            </p>
+            <div class="table-wrapper">
+                <table class="legacy-table">
+                    <thead>
+                        <tr>
+                            <th>Version Name</th>
+                            <th>Status</th>
+                            <th>Downloads</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CLOS 0.14</strong> - The Theseus Update</td>
+                            <td><span class="supported-badge">Supported</span></td>
+                            <td>
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/stable5/CLOS_Windows.exe" target="_blank">Windows (.exe)</a> | 
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/stable5/CLOS_Mac.zip" target="_blank">macOS</a> |
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/stable5/CLOS_Linux.zip" target="_blank">Linux</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>CLOS 0.13</strong> - Brand New 'Stache! Update</td>
+                            <td><span class="unsupported-badge">Unsupported</span></td>
+                            <td>
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/stable4/CLOS_Windows.exe" target="_blank">Windows (.exe)</a> | 
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/stable4/CLOS_Mac.zip" target="_blank">macOS</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>CLOS 0.12.1</strong> - Make Em' Drawings Update</td>
+                            <td><span class="unsupported-badge">Unsupported</span></td>
+                            <td><a href="https://github.com/happysmaran/CLOS/releases/download/stable3/CLOS_Windows.exe" target="_blank">Windows (.exe)</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CLOS 0.12</strong> - The GUI Update</td>
+                            <td><span class="unsupported-badge">Unsupported</span></td>
+                            <td><a href="https://github.com/happysmaran/CLOS/releases/download/guibeta/CLOS_Windows.exe" target="_blank">Windows (.exe)</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CLOS 0.11.2</strong> - Terminal Graphing Update</td>
+                            <td><span class="supported-badge">Supported</span></td>
+                            <td>
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/stable2/CLOS_Win.exe" target="_blank">Windows (.exe)</a> | 
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/stable2/CLOS_Mac" target="_blank">macOS</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>CLOS 0.11.1</strong> - Calculating Calculus Update</td>
+                            <td><span class="unsupported-badge">Unsupported</span></td>
+                            <td>
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/stable/CLOS_Win.exe" target="_blank">Windows (.exe)</a> | 
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/stable/CLOS_Mac" target="_blank">macOS</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>CLOS 0.10.1</strong> - Trig, Trig, Trig!</td>
+                            <td><span class="unsupported-badge">Unsupported</span></td>
+                            <td>
+                                <a href="https://github.com/happysmaran/CLOS/releases/download/0.10.1/CLOS" target="_blank">macOS</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </section>
-        <section class="download-section">
-            <h2>CLOS 0.11.2 - The Terminal Graphing Update</h2>
-            <div class="download-links">
-                <p><span data-translate="windows_exe">Windows Executable:</span> <a href="https://github.com/happysmaran/CLOS/releases/download/stable2/CLOS_Win.exe" target="_blank" data-translate="download_here">Download here</a></p>
-                <p><span data-translate="macos_exe">macOS Executable:</span> <a href="https://github.com/happysmaran/CLOS/releases/download/stable2/CLOS_Mac" target="_blank" data-translate="download_here">Download Here</a></p>
-                <p><span data-translate="user_manual_link">User Manual:</span> <a href="https://github.com/happysmaran/CLOS/blob/main/CLOS%20User%20Manual.pdf" target="_blank" data-translate="download_here">Download Here</a>
-                    <h6 class="red-text" data-translate="no_support">This version no longer recieves support. Use version 0.13.0 or above instead.</h6>
-        </section>
-        <section class="download-section">
-            <h2>CLOS 0.11.1 - Calculating Calculus Update</h2>
-            <div class="download-links">
-                <p><span data-translate="windows_exe">Windows Executable:</span> <a href="https://github.com/happysmaran/CLOS/releases/download/stable/CLOS_Win.exe" target="_blank" data-translate="download_here">Download here</a></p>
-                <p><span data-translate="macos_exe">macOS Executable:</span> <a href="https://github.com/happysmaran/CLOS/releases/download/stable/CLOS_Mac" target="_blank" data-translate="download_here">Download Here</a></p>
-                <p><span data-translate="user_manual_link">User Manual:</span> <a href="https://github.com/happysmaran/CLOS/blob/main/CLOS%20User%20Manual.pdf" target="_blank" data-translate="download_here">Download Here</a>
-                    <h6 class="red-text" data-translate="no_support">This version no longer recieves support. Use version 0.13.0 or above instead.</h6>
-        </section>
-        <section class="download-section">
-            <h2>CLOS 0.10.1 - Trig, Trig, Trig!</h2>
-            <div class="download-links">
-                <p><span data-translate="macos_exe">macOS Executable:</span> <a href="https://github.com/happysmaran/CLOS/releases/download/0.10.1/CLOS" target="_blank" data-translate="download_here">Download Here</a></p>
-                <p><span data-translate="user_manual_link">User Manual:</span> <a href="https://github.com/happysmaran/CLOS/blob/main/CLOS%20User%20Manual.pdf" target="_blank" data-translate="download_here">Download Here</a>
-                <h6 class="red-text" data-translate="no_support">This version no longer recieves support. Use version 0.13.0 or above instead.</h6>
         </section>
     </main>
     <footer class="footer">
         <div class="footer-content">
-            <p data-translate="copyright">&copy; 2026 CLOS. All rights reserved.</p>
+            <p>&copy; 2026 CLOS. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://github.com/happysmaran/CLOS/releases"><img src="images/github.png" target="_blank" height=25px alt="GitHub"></a>
-                <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" target="_blank" height=25px alt="Email"></a>
+                <a href="https://github.com/happysmaran/CLOS/releases" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" alt="Email"></a>
             </div>
         </div>
     </footer>
-    <script src="js/translations.js"></script>
     <script>
         function toggleMenu() {
             const hamburger = document.querySelector('.hamburger');

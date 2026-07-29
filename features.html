@@ -25,8 +25,10 @@
     <title>CLOS Features - Mathematical Functions & Calculator Capabilities</title>
     <link rel="canonical" href="https://smaran-vallabhaneni.com/CLOS/features.html">
     <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -37,70 +39,102 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a class="navLink" href="index.html" data-translate="nav_home">Home</a>
-            <a class="navLink" href="about.html" data-translate="nav_about">About</a>
-            <a class="navLink" href="features.html" data-translate="nav_features">Features</a>
-            <a class="navLink" href="contact.html" data-translate="nav_contact">Contact</a>
-            <a class="navLink cta" href="download.html" data-translate="nav_download">Download</a>
+            <a class="navLink" href="index.html">Home</a>
+            <a class="navLink" href="about.html">About</a>
+            <a class="navLink" href="features.html">Features</a>
+            <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink cta" href="download.html">Download</a>
         </div>
     </nav>
     <header class="hero compact">
         <div class="hero-content">
-            <h1 data-translate="features_title">CLOS Features</h1>
-            <h3 data-translate="explore_features">Explore our features</h3>
+            <span class="eyebrow">what's inside</span>
+            <h1>CLOS Features</h1>
+            <h3>Powerful offline tools for calculation, visualization, and analysis</h3>
         </div>
     </header>
-    <section class="features">
-        <div class="features-grid">
-            <div class="feature-item bg2">
-                <h3 data-translate="basic_math_functions">Basic Math Functions</h3>
-                <img src="images/features/demo_add.png" alt="Addition demonstration">
+    <main>
+        <section class="features">
+            <div class="features-grid">
+                <div class="feature-item bg1">
+                    <h3>Basic Math Functions</h3>
+                    <p>Perform high-precision standard arithmetic, exponentiation, and root operations.</p>
+                    <img src="images/features/demo_add.png" alt="Basic arithmetic demonstration in CLOS" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg2">
+                    <h3>Trigonometry</h3>
+                    <p>Compute standard, inverse, and hyperbolic trigonometric equations with ease.</p>
+                    <img src="images/features/demo_cosine.png" alt="Trigonometric function demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg3">
+                    <h3>Linear/Quadratic Solver</h3>
+                    <p>Solve algebraic equations instantly with full support for real and complex roots.</p>
+                    <img src="images/features/demo_quadraticsolve.png" alt="Quadratic solver output demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg4">
+                    <h3>Derivative/Integral Solver</h3>
+                    <p>Calculate derivatives and integrals, both definite and indefinite, efficiently.</p>
+                    <img src="images/features/demo_derivative.png" alt="Calculus derivative solver demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg5">
+                    <h3>Miscellaneous Math</h3>
+                    <p>Convert units, measurements, and so much more. Also comes with a reference guide.</p>
+                    <img src="images/features/demo_degrad.png" alt="Degree to Radian conversion demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg6">
+                    <h3>Built-in History Monitor</h3>
+                    <p>Review and manage your calculation history with ease.</p>
+                    <img src="images/features/demo_history.png" alt="History monitor demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg7">
+                    <h3>AI Tutor</h3>
+                    <p>Get personalized learning experiences and step-by-step guidance for mastering mathematical concepts, fully offline.</p>
+                    <img src="images/features/demo_tutor.png" alt="AI tutor demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg8">
+                    <h3>2D Graphing</h3>
+                    <p>Visualize equations interactively with dynamic 2D graph plots.</p>
+                    <img src="images/features/demo_linegraph.png" alt="2D line plotting demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg9">
+                    <h3>3D Graphing</h3>
+                    <p>Plot multi-variable functions and 3D surface representations.</p>
+                    <img src="images/features/demo_3d.png" alt="3D graph rendering demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg10">
+                    <h3>Advanced Simulation</h3>
+                    <p>Use several tools for advanced mathematical modeling and simulation.</p>
+                    <img src="images/features/demo_logicgate.png" alt="Logic gate simulation demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg11">
+                    <h3>Terminal Emulator</h3>
+                    <p>Interact with a command-line interface for advanced users.</p>
+                    <img src="images/features/demo_terminal.png" alt="Terminal emulator demonstration" onclick="openLightbox(this)">
+                </div>
+                <div class="feature-item bg12">
+                    <h3>Scripting Editor</h3>
+                    <p>Create and manage custom scripts for automated calculations and processing.</p>
+                    <img src="images/features/demo_scripting.png" alt="Scripting editor demonstration" onclick="openLightbox(this)">
+                </div>
             </div>
-            <div class="feature-item bg3">
-                <h3 data-translate="trigonometry">Trigonometry</h3>
-                <img src="images/features/demo_cosine.png" alt="Cosine demonstration">
-            </div>
-            <div class="feature-item bg2">
-                <h3 data-translate="linear_quadratic_solver">Linear/Quadratic Solver</h3>
-                <img src="images/features/demo_quadraticsolve.png" alt="Quadratic solver demonstration">
-            </div>
-            <div class="feature-item bg2">
-                <h3 data-translate="linear_quadratic_grapher">Linear/Quadratic Grapher</h3>
-                <img src="images/features/demo_linegraph.png" alt="Line grapher demonstration">
-            </div>
-            <div class="feature-item bg1">
-                <h3 data-translate="derivative_integral">Derivative/Integral Solver</h3>
-                <img src="images/features/demo_derivative.png" alt="Definite derivative solver demonstration">
-            </div>
-            <div class="feature-item bg1">
-                <h3 data-translate="misc_math">Miscellaneous Math Functions</h3>
-                <img src="images/features/demo_degrad.png" alt="Degree to Radian conversion demonstration">
-            </div>
-            <div class="feature-item bg1">
-                <h3 data-translate="spreadsheet">Spreadsheet</h3>
-                <img src="images/features/demo_spreadsheet.png" alt="Spreadsheet demonstration">
-            </div>
-            <div class="feature-item bg3">
-                <h3 data-translate="three_d_graphing">3D Graphing (Beta)</h3>
-                <img src="images/features/demo_3d.png" alt="3D graphing demonstration">
-            </div>
-            <div class="feature-item bg2">
-                <h3 data-translate="help_guides">In-built Help Guides</h3>
-                <img src="images/features/demo_helpguides.png" alt="In-built help guides">
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
+
+    <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close image preview">&times;</button>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="">
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
-            <p data-translate="copyright">&copy; 2026 CLOS. All rights reserved.</p>
+            <p>&copy; 2026 CLOS. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://github.com/happysmaran/CLOS/releases"><img src="images/github.png" target="_blank" height=25px alt="GitHub"></a>
-                <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" target="_blank" height=25px alt="Email"></a>
+                <a href="https://github.com/happysmaran/CLOS/releases" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" alt="Email"></a>
             </div>
         </div>
     </footer>
-    <script src="js/translations.js"></script>
-<script>
+    <script>
         function toggleMenu() {
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
@@ -116,6 +150,30 @@
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
             });
+        });
+
+        function openLightbox(imgEl) {
+            const overlay = document.getElementById('lightboxOverlay');
+            const lightboxImg = document.getElementById('lightboxImage');
+            lightboxImg.src = imgEl.src;
+            lightboxImg.alt = imgEl.alt;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id !== 'lightboxOverlay' && !event.target.classList.contains('lightbox-close')) return;
+            const overlay = document.getElementById('lightboxOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const overlay = document.getElementById('lightboxOverlay');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     </script>
 </body>

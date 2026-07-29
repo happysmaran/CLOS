@@ -25,8 +25,10 @@
     <title>CLOS - Advanced Mathematical Calculator & Graphing Tool | Free Download</title>
     <link rel="canonical" href="https://smaran-vallabhaneni.com/CLOS/">
     <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -61,24 +63,26 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a class="navLink" href="index.html" data-translate="nav_home">Home</a>
-            <a class="navLink" href="about.html" data-translate="nav_about">About</a>
-            <a class="navLink" href="features.html" data-translate="nav_features">Features</a>
-            <a class="navLink" href="contact.html" data-translate="nav_contact">Contact</a>
-            <a class="navLink cta" href="download.html" data-translate="nav_download">Download</a>
+            <a class="navLink" href="index.html">Home</a>
+            <a class="navLink" href="about.html">About</a>
+            <a class="navLink" href="features.html">Features</a>
+            <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink cta" href="download.html">Download</a>
         </div>
     </nav>
     <header class="hero">
         <div class="hero-content">
-            <h1 data-translate="welcome_title">Welcome to CLOS</h1>
-            <p class="main-large" data-translate="main_description">An offline mathematical tool for advanced calculations and graphing.</p>
-            <a class="main-download" href="download.html" data-translate="download_now">Download Now</a>
+            <span class="eyebrow">free · offline · no account</span>
+            <h1>Welcome to CLOS</h1>
+            <p class="main-large">An offline mathematical tool capable of doing <span class="typewriter-line"><span class="typewriter" id="typewriterText">&nbsp;</span><span class="typewriter-cursor">|</span></span></p>
+            <a class="main-download" href="download.html">Download Now</a>
         </div>
         <div class="slideshow-container">
             <div class="slides-wrapper">
-                <img class="slide-image" src="images/index/demo_image1.png" alt="CLOS UI home">
-                <img class="slide-image" src="images/index/demo_image2.png" alt="CLOS UI alternate view">
-                <img class="slide-image" src="images/index/demo_image3.png" alt="CLOS UI advanced view">
+                <img class="slide-image" src="images/index/demo_image1.png" alt="CLOS UI home screen">
+                <img class="slide-image" src="images/index/demo_image2.png" alt="CLOS UI functions view">
+                <img class="slide-image" src="images/index/demo_image4.png" alt="CLOS UI AI tutor view">
+                <img class="slide-image" src="images/index/demo_image3.png" alt="CLOS UI 3D graphing view">
             </div>
             <a class="prev" onclick="changeSlide(-1)">&#9664;</a>
             <a class="next" onclick="changeSlide(1)">&#9654;</a>
@@ -87,66 +91,60 @@
                 <span class="slide-dot" onclick="currentSlide(0)"></span>
                 <span class="slide-dot" onclick="currentSlide(1)"></span>
                 <span class="slide-dot" onclick="currentSlide(2)"></span>
+                <span class="slide-dot" onclick="currentSlide(3)"></span>
             </div>
             <div class="slide-progress"></div>
         </div>
     </header>
 
-    <section style="text-align: center;">
-        <h2 data-translate="upcoming_features">Next-Gen Interface Evolution</h2>
-        <p>We are actively working on a completely reimagined environment featuring powerful tools, an AI tutor, and a more intuitive user experience.</p>
-        
-        <div class="coming-soon-container">
-            <span class="coming-soon-badge" data-translate="coming_soon">Coming Soon</span>
-            <img src="images/cs.png" alt="CLOS New Aesthetic Preview" class="coming-soon-img">
-        </div>
-    </section>
+    <main>
+        <section class="features">
+            <h2>Overview of Features</h2>
+            <div class="features-grid-alt">
+                <div class="feature-item bg1">
+                    <h3>Math Solver</h3>
+                    <p>Handle complex equations in any math discipline and get detailed, step-by-step solutions.</p>
+                </div>
+                <div class="feature-item bg2">
+                    <h3>Visualization Tools</h3>
+                    <p>Visualize any concept using interactive plots, renderings, tools, and more.</p>
+                </div>
+                <div class="feature-item bg3">
+                    <h3>AI Tutoring</h3>
+                    <p>Get personalized learning experiences and step-by-step guidance for mastering mathematical concepts.</p>
+                </div>            
+            </div>
+        </section>
 
-    <section class="features">
-        <h2 data-translate="overview_features">Overview of Features</h2>
-        <div class="features-grid-alt">
-            <div class="feature-item bg1">
-                <h3 data-translate="equation_solver">Equation Solver</h3>
-                <p data-translate="equation_solver_desc">Handle complex equations, including non-real numbers and step-by-step solutions.</p>
+        <section class="testimonials">
+            <h2>Why Choose CLOS?</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <h3>For Students</h3>
+                    <p>Master any mathematical concepts with a personalized learning experience and step-by-step guidance with a wide range of tools for any math-related topic.</p>
+                </div>
+                <div class="testimonial-item">
+                    <h3>For Educators</h3>
+                    <p>Demonstrate mathematical concepts effectively in the classroom with powerful visualization and solving tools that work in any situation.</p>
+                </div>
+                <div class="testimonial-item">
+                    <h3>For Professionals</h3>
+                    <p>Solve complex mathematical problems quickly and accurately with our comprehensive suite of fully offline, no-nonsense, lean implementation tools.</p>
+                </div>
             </div>
-            <div class="feature-item bg2">
-                <h3 data-translate="graphing_tools">Graphing Tools</h3>
-                <p data-translate="graphing_desc">Visualize mathematical functions with advanced graphing capabilities.</p>
-            </div>
-            <div class="feature-item bg3">
-                <h3 data-translate="advanced_math">Advanced Math</h3>
-                <p data-translate="advanced_math_desc">Compute derivatives, integrals, trigonometry, and more complex operations.</p>
-            </div>            
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section class="testimonials">
-        <h2 data-translate="why_choose">Why Choose CLOS?</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-item">
-                <h3 data-translate="for_students">For Students</h3>
-                <p data-translate="students_desc">Learn math concepts with step-by-step solutions and visual representations that make complex topics easier to understand.</p>
-            </div>
-            <div class="testimonial-item">
-                <h3 data-translate="for_educators">For Educators</h3>
-                <p data-translate="educators_desc">Demonstrate mathematical concepts effectively in the classroom with powerful visualization and solving tools.</p>
-            </div>
-            <div class="testimonial-item">
-                <h3 data-translate="for_professionals">For Professionals</h3>
-                <p data-translate="professionals_desc">Solve complex mathematical problems quickly and accurately with our comprehensive suite of tools.</p>
-            </div>
-        </div>
-    </section>
     <footer class="footer">
         <div class="footer-content">
-            <p data-translate="copyright">&copy; 2026 CLOS. All rights reserved.</p>
+            <p>&copy; 2026 CLOS. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://github.com/happysmaran/CLOS/releases"><img src="images/github.png" target="_blank" height=25px alt="GitHub"></a>
-                <a href="mailto:smaranvallabhaneni@gmail.com"><img src="images/email.png" target="_blank" height=25px alt="Email"></a>
+                <a href="https://github.com/happysmaran/CLOS/releases" target="_blank"><img src="images/github.png" height="25" alt="GitHub"></a>
+                <a href="mailto:smaranvallabhaneni@gmail.com" target="_blank"><img src="images/email.png" height="25" alt="Email"></a>
             </div>
         </div>
     </footer>
-    <script src="js/translations.js"></script>
+
     <script>
         let slideIndex = 0;
         let slideInterval;
@@ -232,6 +230,45 @@
             updateSlidePosition();
             updateIndicators();
             startSlideshow();
+        }
+
+        // Typewriter effect
+        const typewriterWords = ['graphing', 'calculus', 'algebra', 'trigonometry', 'equation solving', 'word problems', 'just about anything'];
+        const typewriterEl = document.getElementById('typewriterText');
+        const typingSpeed = 90;
+        const deletingSpeed = 50;
+        const pauseAfterType = 1200;
+        const pauseAfterDelete = 300;
+
+        function runTypewriter(wordIndex, charIndex, isDeleting) {
+            const isLastWord = wordIndex === typewriterWords.length - 1;
+            const currentWord = typewriterWords[wordIndex];
+
+            if (!isDeleting) {
+                charIndex++;
+                typewriterEl.textContent = currentWord.substring(0, charIndex);
+
+                if (charIndex === currentWord.length) {
+                    if (isLastWord) return;
+                    setTimeout(() => runTypewriter(wordIndex, charIndex, true), pauseAfterType);
+                    return;
+                }
+                setTimeout(() => runTypewriter(wordIndex, charIndex, false), typingSpeed);
+            } else {
+                charIndex--;
+                typewriterEl.textContent = charIndex > 0 ? currentWord.substring(0, charIndex) : '\u00A0';
+
+                if (charIndex === 0) {
+                    const nextWordIndex = (wordIndex + 1) % typewriterWords.length;
+                    setTimeout(() => runTypewriter(nextWordIndex, 0, false), pauseAfterDelete);
+                    return;
+                }
+                setTimeout(() => runTypewriter(wordIndex, charIndex, true), deletingSpeed);
+            }
+        }
+
+        if (typewriterEl) {
+            setTimeout(() => runTypewriter(0, 0, false), 500);
         }
 
         // Hamburger menu functionality
