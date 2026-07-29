@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smaran-vallabhaneni.com/CLOS/</loc>
+    <loc>https://closapp.org/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://smaran-vallabhaneni.com/CLOS/about.html</loc>
+    <loc>https://closapp.org/about.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://smaran-vallabhaneni.com/CLOS/features.html</loc>
+    <loc>https://closapp.org/features.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smaran-vallabhaneni.com/CLOS/download.html</loc>
+    <loc>https://closapp.org/download.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://smaran-vallabhaneni.com/CLOS/contact.html</loc>
+    <loc>https://closapp.org/contact.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

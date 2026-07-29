@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smaran-vallabhaneni.com/CLOS/sitemap.xml
+Sitemap: https://closapp.org/sitemap.xml
